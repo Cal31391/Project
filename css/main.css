@@ -1,0 +1,331 @@
+/*
+Caroline Lee
+10-13-2017
+css for project
+*/
+
+
+/*template from: https://www.w3schools.com/bootstrap/bootstrap_templates.asp*/
+
+body {
+    background-color: #ececec;
+}
+
+footer {
+    height: 50px;
+    text-align: center;
+}
+
+.register {
+    text-align: center;
+}
+
+.form {
+    margin: 0 5% 0 5%;
+    background-color: #cecece;
+    padding: 5%;
+    text-align: left;
+}
+
+.page-wrapper {
+    min-height: calc(100vh - 50px);
+}
+
+.link {
+    /*link to account settings*/
+    text-decoration: underline;
+    font-size: 10px;
+    margin: 1%;
+}
+
+
+
+
+
+.login {
+    text-align: center;
+}
+
+.forgot-password {
+    font-size: 10px;
+    text-align: right;
+    margin-bottom: 1%;
+}
+
+.submit {
+    text-align: center;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.login-submit-btn {
+    text-align: center;
+}
+
+.login-portal {
+    margin: 0 10% 0 10%;
+}
+
+.jumbotron {
+    margin-top: 5%;
+    padding: 3%;
+}
+
+.register-module {
+    padding: 5% 3% 3% 5%;
+}
+
+.register {
+    text-align: center;
+}
+
+.register-title {
+    text-align: center;
+}
+
+.have-account {
+    font-size: 10px;
+}
+
+
+
+
+
+.settings {
+    /*all settings*/
+    text-align: left;
+}
+
+.user-info {
+    padding-top: 5%;
+    margin-bottom: 5%;
+}
+
+.username {
+    margin-bottom: 0;
+}
+
+.password {
+    margin-top: 5%;
+    margin-bottom: 0;
+}
+
+.email {
+    margin-top: 5%;
+    margin-bottom: 0;
+}
+
+
+
+
+
+.account-elements {
+    /*everything else*/
+    padding: 4%;
+}
+
+.dashboard {
+    /*container for all dashboard*/
+    text-align: center;
+}
+
+.account {
+    /*account stuff*/
+    padding-right: 10%;
+}
+
+.schedule {
+    /*schedule stuff*/
+    text-align: center;
+}
+
+.new-meeting-link {
+    text-align: center;
+    font-size: 10px;
+    text-decoration: underline;
+}
+
+.calendar-container {
+    padding-left: 10%;
+}
+
+.googleCalendar {
+    text-align: center;
+}
+
+.googleCalendar iframe {
+    border-style: solid;
+    border-width: 3px;
+    border-color: #9d9dff;
+}
+
+
+
+
+
+.second-row {
+    margin: 3%;
+}
+
+.group {
+    padding: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+    background-color: darkgray;
+}
+
+.group-name {
+    /*also for meeting info*/
+    text-align: center;
+    font-weight: bold;
+}
+
+.group-image {
+    text-align: center;
+}
+
+.members-module {
+    background-color: lightgray;
+    margin-right: 2%;
+    margin-left: 2%;
+    padding-bottom: 2%;
+}
+
+.members {
+    text-align: center;
+
+    font-weight: bold;
+}
+
+.member-names {
+    text-align: center;
+    padding: 0;
+}
+
+.delete-sign {
+    color: red;
+}
+
+.add-sign {
+    color: green;
+}
+
+.mem-name-box {
+    margin-left: 1px;
+    text-align: center;
+}
+
+.meetings-module {
+    background-color: lightgray;
+    margin-right: 2%;
+    margin-left: 2%;
+    padding-bottom: 2%;
+}
+
+.meetings {
+    text-align: center;
+    font-weight: bold;
+}
+
+.meeting-links {
+    text-align: center;
+    padding: 0;
+}
+
+.save-btn-div {
+    margin-top: 2%;
+    text-align: right;
+}
+
+.delete-group-btn {
+    text-align: center;
+    margin-top: 2%;
+}
+
+.mem-name-box {
+    width: 80%;
+    text-align: left;
+}
+
+
+
+
+
+.second-row-col-1 {
+    margin-right: 3%;
+}
+
+.dropdown {
+    margin-bottom: 4%;
+}
+
+.group-box-meeting {
+    padding: 0%;
+}
+
+.save-new-group {
+    text-align: right;
+}
+
+.second-row-col-1-meeting {
+    padding: 0;
+}
+
+.second-row-col-2 {
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.third-row-col-1 {
+
+    text-align: center;
+}
+
+.title h1 {
+    margin-bottom: 0;
+}
+
+
+.group-container {
+    margin: 0;
+}
+
+.group-module {
+    margin: 0;
+}
+
+.group-box {
+    padding: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+}
+
+.notes {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.meeting-time {
+    text-align: center;
+    font-weight: bold;
+}
+
+.location {
+    text-align: center;
+    font-weight: bold;
+}
+
+.map {
+    text-align: center;
+}
+
+.map-space {
+
+    display: inline-block;
+}

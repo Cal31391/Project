@@ -1,0 +1,186 @@
+<!--Caroline Lee
+  - 10-2-2017
+  - Project
+  - Edit Groups 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Field Trip - Groups</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href='../css/main.css'>
+</head>
+
+<body>
+    <div class='page-wrapper'>
+        <!--NAVBAR-->
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Field Trip</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Dashboard</a></li>
+                        <li class="active"><a href="#">Groups</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Account</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--CONTAINER FOR FIRST ROW-->
+        <div class="container-fluid first-row">
+            <!--TITLE AND LOGO-->
+            <div class="row first-row" align="center">
+                <div class="col-md-offset-4 col-md-4">
+                    <div class="title">
+                        <h1>Groups</h1>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="logo">
+                        <img src="../images/logo.png" alt="logo" class="img-thumbnail" width="100px" height="100px">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--CONTAINER FOR SECOND ROW-->
+        <div class="container-fluid second-row">
+            <!--SECOND ROW-->
+            <div class="row group">
+                <div class="row group-info">
+                    <div class="col-md-4 module-title">
+                        <h4 class="group-name">Coffee Shop Group</h4>
+                        <div class="group-image">
+                            <img src="../images/coffee.jpg" alt="coffee" class="img-thumbnail" width="200px" height="150px">
+                            <!--https://media.timeout.com/images/100893385/image.jpg-->
+                        </div>
+                    </div>
+                    <div class="col-md-3 members-module">
+                        <h5 class="members">Members</h5>
+                        <ul style="list-style-type: none" class="member-names">
+                            <li id="name"><a href="#"><span class="glyphicon glyphicon-minus delete-sign"></span></a> fname lname</li>
+                            <li id="name"><a href="#"><span class="glyphicon glyphicon-minus delete-sign"></span></a> fname lname</li>
+                            <li id="name"><a href="#"><span class="glyphicon glyphicon-minus delete-sign"></span></a> fname lname</li>
+                            <li id="name"><a href="#"><span class="glyphicon glyphicon-minus delete-sign"></span></a> fname lname</li>
+                            <li id="name"><a href="#"><span class="glyphicon glyphicon-minus delete-sign"></span></a> fname lmane</li>
+                        </ul>
+                        <a href="#"><span class="glyphicon glyphicon-plus add-sign"></span></a>
+                        <input type="text" class="mem-name-box" id="mem-name-box" name="member-name " placeholder="Enter name ">
+                        <div class="save-btn-div ">
+                            <button type="button " class="btn save-btn">Save</button>
+                        </div>
+                    </div>
+                    <div class="col-md-3 meetings-module ">
+                        <h5 class="meetings ">Meetings</h5>
+                        <ul style="list-style-type: none " class="meeting-links ">
+                            <li id="name ">Meeting 1 (day/time)<a href="# " class="link ">Info</a><a href="# " class="link ">Edit</a></li>
+                            <li id="name ">Meeting 2 (day/time)<a href="# " class="link ">Info</a><a href="# " class="link ">Edit</a></li>
+                            <li id="name ">Meeting 3 (day/time)<a href="# " class="link ">Info</a><a href="# " class="link ">Edit</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-offset-10 col-md-2 delete-group-btn">
+                    <button type="button " class="btn delete-btn">Delete Group</button>
+                </div>
+            </div>
+            <div class="row group ">
+                <div class="row group-info ">
+                    <div class="col-md-4 module-title ">
+                        <h4 class="group-name ">Library Group</h4>
+                        <div class="group-image ">
+                            <img src="../images/library.jpg" alt="library" class="img-thumbnail " width="200px " height="150px ">
+                            <!--https://usatcollege.files.wordpress.com/2014/09/139786707.jpg-->
+                        </div>
+                    </div>
+                    <div class="col-md-3 members-module ">
+                        <h5 class="members ">Members</h5>
+                        <ul style="list-style-type: none " class="member-names ">
+                            <li id="name "><a href="# "><span class="glyphicon glyphicon-minus delete-sign "></span></a> fname lname</li>
+                            <li id="name "><a href="# "><span class="glyphicon glyphicon-minus delete-sign "></span></a> fname lname</li>
+                            <li id="name "><a href="# "><span class="glyphicon glyphicon-minus delete-sign "></span></a> fname lname</li>
+                            <li id="name "><a href="# "><span class="glyphicon glyphicon-minus delete-sign "></span></a> fname lname</li>
+                            <li id="name "><a href="# "><span class="glyphicon glyphicon-minus delete-sign "></span></a> fname lmane</li>
+                        </ul>
+                        <a href="# "><span class="glyphicon glyphicon-plus add-sign "></span></a>
+                        <input type="text " class="mem-name-box" id="mem-name-box" name="member-name " placeholder="Enter name ">
+                        <div class="save-btn-div ">
+                            <button type="button" class="btn save-btn">Save</button>
+                        </div>
+                    </div>
+                    <div class="col-md-3 meetings-module ">
+                        <h5 class="meetings ">Meetings</h5>
+                        <ul style="list-style-type: none " class="meeting-links ">
+                            <li id="name ">Meeting 1 (day/time)<a href="# " class="link ">Info</a><a href="# " class="link ">Edit</a></li>
+                            <li id="name ">Meeting 2 (day/time)<a href="# " class="link ">Info</a><a href="# " class="link ">Edit</a></li>
+                            <li id="name ">Meeting 3 (day/time)<a href="# " class="link ">Info</a><a href="# " class="link ">Edit</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-offset-10 col-md-2 delete-group-btn ">
+                    <button type="button " class="btn delete-btn ">Delete Group</button>
+                </div>
+            </div>
+            <div class="row group ">
+                <div class="row group-info ">
+                    <div class="col-md-4 module-title ">
+                        <h4 class="group-name ">Bowling Group</h4>
+                        <div class="group-image ">
+                            <img src="../images/bowling.jpg " alt="bowling " class="img-thumbnail " width="200px " height="150px ">
+                            <!--http://www.lincolnbowl.co.uk/wp-content/uploads/2016/02/bggg.jpg-->
+                        </div>
+                    </div>
+                    <div class="col-md-3 members-module ">
+                        <h5 class="members ">Members</h5>
+                        <ul style="list-style-type: none " class="member-names ">
+                            <li id="name "><a href="# "><span class="glyphicon glyphicon-minus delete-sign "></span></a> fname lname</li>
+                            <li id="name "><a href="# "><span class="glyphicon glyphicon-minus delete-sign "></span></a> fname lname</li>
+                            <li id="name "><a href="# "><span class="glyphicon glyphicon-minus delete-sign "></span></a> fname lname</li>
+                            <li id="name "><a href="# "><span class="glyphicon glyphicon-minus delete-sign "></span></a> fname lname</li>
+                            <li id="name "><a href="# "><span class="glyphicon glyphicon-minus delete-sign "></span></a> fname lmane</li>
+                        </ul>
+                        <a href="# "><span class="glyphicon glyphicon-plus add-sign "></span></a>
+                        <input type="text " class="mem-name-box" id="mem-name-box " name="member-name " placeholder="Enter name ">
+                        <div class="save-btn-div ">
+                            <button type="button " class="btn save-btn ">Save</button>
+                        </div>
+                    </div>
+                    <div class="col-md-3 meetings-module ">
+                        <h5 class="meetings ">Meetings</h5>
+                        <ul style="list-style-type: none " class="meeting-links ">
+                            <li id="name ">Meeting 1 (day/time)<a href="# " class="link ">Info</a><a href="# " class="link ">Edit</a></li>
+                            <li id="name ">Meeting 2 (day/time)<a href="# " class="link ">Info</a><a href="# " class="link ">Edit</a></li>
+                            <li id="name ">Meeting 3 (day/time)<a href="# " class="link ">Info</a><a href="# " class="link ">Edit</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-offset-10 col-md-2 delete-group-btn ">
+                    <button type="button " class="btn delete-btn ">Delete Group</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--FOOTER-->
+    <footer>
+        <br>
+        <br>
+        <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</html>
