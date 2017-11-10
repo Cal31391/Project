@@ -1,45 +1,41 @@
 <?php
 //http://form.guide/php-form/php-login-form.html
-include_once 'db_connect.php';
+include('db_connect.php');
 
-login();
+session_start();
 
-function login() {
-    /*if(empty($_POST['username'])) {
-        $this->HandleError("Enter a username");
-        return false;
+// Define variables and initialize with empty values
+$username = $password = "";
+$username_err = $password_err = "";
+
+// Processing form data when form is submitted
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $username = ($_POST['username']);
+    $password = ($_POST['password']);
+
+
+    // Prepare a select statement
+    $stmt = $conn->prepare("SELECT username FROM users WHERE username=? and password=?");
+    $stmt->execute(array($username, $password));
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $count = $stmt->rowCount();
+
+    if(empty($_POST["username"])) {
+        $username_err = "Incorrect username";
     }
-    if(empty($_POST['password'])) {
-        $this->HandleError("Enter a password");
-        return false;
-    }*/
-    $username = trim($_POST['username']);
-    $password = trim($_POST['password']);
-
-    if(!CheckLoginInDB($username,$password)) {
-        return false;
+    if(empty($_POST["password"])) {
+        $password_err = "Incorrect password";
     }
 
-    session_start();
+    if($count == 1) {
+        $_SESSION['username'] = "username";
+        $_SESSION['login_user'] = $username;
 
-    $_SESSION[$this->GetLoginSessionVar()] = $username;
-    return true;
-}
-
-function CheckLoginInDB($user,$password) {
-
-
-    $username = $user;
-    $pwdmd5 = md5($password);
-    $qry = "Select name, email from c2375a03test ".
-        " where username='$username' and password='$pwdmd5' ";
-
-    $result = mysql_query($qry);
-
-    if(!$result || mysql_num_rows($result) <= 0) {
-        HandleError("Error logging in. ".
-        "Username or password does not match");
-        return false;
+        header("location: dashboard.php");
     }
-    return true;
+    else {
+        header("location: failure.html");
+    }
+
 }

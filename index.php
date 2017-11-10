@@ -55,7 +55,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="logo">
-                        <img src="./images/logo.png" alt="placeholder" class="img-thumbnail" width="150px" height="150px">
+                        <img src="./images/Logo.png" alt="placeholder" class="img-thumbnail" width="150px" height="150px">
                     </div>
                 </div>
             </div>
@@ -99,13 +99,13 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <form action="/db_connect.php">
+                        <!--form action-->
                             <div class="form-group">
                                 <label for="email">Email Address:</label>
                                 <input type="email" class="form-control" id="email">
                                 <button type="button" class="btn btn-default" data-dismiss="modal" onclick="autoRespond()">Submit</button> 
                             </div>
-                        </form>
+                        <!--form action-->
                     </div>
                 </div>
             </div>
