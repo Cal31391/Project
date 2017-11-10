@@ -3,16 +3,7 @@
   - Project
   - Edit Meeting
 -->
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Field Trip Edit Meeting</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href='../css/main.css'>
-</head>
+<?php require 'header.php' ?>
 
 <body>
     <div class='page-wrapper'>
@@ -77,7 +68,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="logo">
-                        <img src="../images/logo.png" alt="logo" class="img-thumbnail" width="100px" height="100px">
+                        <img src="./images/logo.png" alt="logo" class="img-thumbnail" width="100px" height="100px">
                     </div>
                 </div>
             </div>
@@ -99,7 +90,7 @@
                     </div>
                     <div class="link">
                         <div class="edit-groups">
-                            <a href="#">Edit Groups</a>
+                            <a href="/project/edit_groups.php">Edit Groups</a>
                         </div>
                     </div>
                     <br>
@@ -112,8 +103,8 @@
                             <a href="#" class="list-group-item list-group-item-action">Group member 5</a>
                         </div>
                         <div class="select-buttons">
-                            <button type="button" class="btn">Select All</button>
-                            <button type="button" class="btn">Unselect All</button>
+                            <button type="button" class="btn" onclick="selectAll()">Select All</button>
+                            <button type="button" class="btn" onclick="unselectAll()">Unselect All</button>
                         </div>
                         <div class="link">
                             <div class="save-new-group">
@@ -146,21 +137,13 @@
                     <div class="start-date-dropdown">
                         <div class="form-group">
                             <label for='datetimepicker1'>From: </label>
-                            <div class='input-group date' id='datetimepicker1'>
-                                <input type='text' class="form-control" />
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-                                </span>
-                            </div>
+                            <input type="text" id="datepicker1">                          
                         </div>
                     </div>
                     <div class="end-date-dropdown">
                         <div class="form-group">
                             <label for='datetimepicker2'>To: </label>
-                            <div class='input-group date' id='datetimepicker2'>
-                                <input type='text' class="form-control" />
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-                                </span>
-                            </div>
+                            <input type="text" id="datepicker2">
                         </div>
                     </div>
                     <!--datepickers from: https://codepen.io/milz/pen/xbXpWw-->
@@ -182,20 +165,24 @@
         <div class="container-fluid">
             <div class="row third-row">
                 <div class="col-md-offset-4 col-md-4 third-row-col-1">
-                    <button type="button" class="btn">Clear</button>
+                    <button type="button" class="btn" onclick="clearAll()">Clear</button>
                     <button type="button" class="btn">Save</button>
                 </div>
             </div>
         </div>
     </div>
-    <!--FOOTER-->
-    <footer>
-        <br>
-        <br>
-        <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-    </footer>
-</body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-</html>
+    <script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOMcE-hq4YPziF6CDJ3VLjXBCqeUy1daA&callback=initMap"></script>
+    <?php require 'footer.php' ?>

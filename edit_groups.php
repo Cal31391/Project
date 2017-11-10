@@ -3,16 +3,7 @@
   - Project
   - Edit Groups 
 -->
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Field Trip - Groups</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href='../css/main.css'>
-</head>
+<?php require 'header.php' ?>
 
 <body>
     <div class='page-wrapper'>
@@ -52,7 +43,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="logo">
-                        <img src="../images/logo.png" alt="logo" class="img-thumbnail" width="100px" height="100px">
+                        <img src="./images/logo.png" alt="logo" class="img-thumbnail" width="100px" height="100px">
                     </div>
                 </div>
             </div>
@@ -65,7 +56,7 @@
                     <div class="col-md-4 module-title">
                         <h4 class="group-name">Coffee Shop Group</h4>
                         <div class="group-image">
-                            <img src="../images/coffee.jpg" alt="coffee" class="img-thumbnail" width="200px" height="150px">
+                            <img src="./images/coffee.jpg" alt="coffee" class="img-thumbnail" width="200px" height="150px">
                             <!--https://media.timeout.com/images/100893385/image.jpg-->
                         </div>
                     </div>
@@ -94,7 +85,7 @@
                     </div>
                 </div>
                 <div class="col-md-offset-10 col-md-2 delete-group-btn">
-                    <button type="button " class="btn delete-btn">Delete Group</button>
+                    <button type="button " class="btn delete-btn" onclick="confirmDelete()">Delete Group</button>
                 </div>
             </div>
             <div class="row group ">
@@ -102,7 +93,7 @@
                     <div class="col-md-4 module-title ">
                         <h4 class="group-name ">Library Group</h4>
                         <div class="group-image ">
-                            <img src="../images/library.jpg" alt="library" class="img-thumbnail " width="200px " height="150px ">
+                            <img src="./images/library.jpg" alt="library" class="img-thumbnail " width="200px " height="150px ">
                             <!--https://usatcollege.files.wordpress.com/2014/09/139786707.jpg-->
                         </div>
                     </div>
@@ -131,7 +122,7 @@
                     </div>
                 </div>
                 <div class="col-md-offset-10 col-md-2 delete-group-btn ">
-                    <button type="button " class="btn delete-btn ">Delete Group</button>
+                    <button type="button " class="btn delete-btn " onclick="confirmDelete()">Delete Group</button>
                 </div>
             </div>
             <div class="row group ">
@@ -139,7 +130,7 @@
                     <div class="col-md-4 module-title ">
                         <h4 class="group-name ">Bowling Group</h4>
                         <div class="group-image ">
-                            <img src="../images/bowling.jpg " alt="bowling " class="img-thumbnail " width="200px " height="150px ">
+                            <img src="./images/bowling.jpg " alt="bowling " class="img-thumbnail " width="200px " height="150px ">
                             <!--http://www.lincolnbowl.co.uk/wp-content/uploads/2016/02/bggg.jpg-->
                         </div>
                     </div>
@@ -168,19 +159,17 @@
                     </div>
                 </div>
                 <div class="col-md-offset-10 col-md-2 delete-group-btn ">
-                    <button type="button " class="btn delete-btn ">Delete Group</button>
+                    <button type="button" class="btn delete-btn" onclick="confirmDelete()">Delete Group</button>
                 </div>
             </div>
         </div>
     </div>
-    <!--FOOTER-->
-    <footer>
-        <br>
-        <br>
-        <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-    </footer>
-</body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-</html>
+    <div class="modal" id="delete-group-confirm">
+        <div class="confirm">
+            <p>Are you sure you want to delete this group?</p>
+            <button type="button" class="btn btn-default" id="modal-btn-yes">Yes</button>
+            <button type="button" class="btn btn-primary" id="modal-btn-no">No</button>
+        </div>
+    </div>
+<?php require 'footer.php' ?>

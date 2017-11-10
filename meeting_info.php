@@ -3,16 +3,7 @@
   - Project
   - Meeting Info
 -->
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Field Trip - Meeting Info</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href='../css/main.css'>
-</head>
+<?php require 'header.php' ?>
 
 <body>
     <div class='page-wrapper'>
@@ -30,7 +21,7 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="/project/dashboard.php">Dashboard</a></li>
                         <li><a href="#">Groups</a></li>
                         <li><a href="#">Help</a></li>
                     </ul>
@@ -55,7 +46,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="logo">
-                        <img src="../images/logo.png" alt="logo" class="img-thumbnail" width="100px" height="100px">
+                        <img src="./images/logo.png" alt="logo" class="img-thumbnail" width="100px" height="100px">
                     </div>
                 </div>
             </div>
@@ -84,7 +75,7 @@
             <div class="col-md-4 map-col">
                 <h4 class="location">Location</h4>
                 <div class="map">
-                    <div class="map-space" id="map-holder" style="width:300px;height:300px;background:black"></div>
+                    <div class="map-space" id="map" style="width:300px;height:300px;background:black"></div>
                 </div>
             </div>
         </div>
@@ -92,19 +83,19 @@
             <a href="#notes" class="meeting-notes" data-toggle="popover" data-content="Notes about the meeting... anything that the user needs to know">Meeting Notes</a>
         </div>
     </div>
-    <!--FOOTER-->
-    <footer>
-        <br>
-        <br>
-        <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-    </footer>
-</body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script>
-$(document).ready(function() {
-    $('[data-toggle="popover"]').popover();
-});
-</script>
+<script>//placeholder//
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOMcE-hq4YPziF6CDJ3VLjXBCqeUy1daA&callback=initMap"></script>
 
-</html>
+    <?php require 'footer.php' ?>

@@ -3,16 +3,7 @@
   - Project
   - Dashboard
 -->
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Field Trip - Dash</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href='../css/main.css'>
-</head>
+<?php require 'header.php' ?>
 
 <body>
     <div class='page-wrapper'>
@@ -52,7 +43,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="logo">
-                        <img src="../images/logo.png" alt="placeholder" class="img-thumbnail" width="100px" height="100px">
+                        <img src="./images/logo.png" alt="placeholder" class="img-thumbnail" width="100px" height="100px">
                     </div>
                 </div>
             </div>
@@ -63,7 +54,7 @@
                     <!--ACCOUNT ElEMENTS-->
                     <div class="col-md-offset-2 col-md-3 account">
                         <div class="user">
-                            <img src="../images/Profile-Placeholder.png" alt="placeholder" class="img-thumbnail" width="100px" height="100px">
+                            <img src="./images/Profile-Placeholder.png" alt="placeholder" class="img-thumbnail" width="100px" height="100px">
                         </div>
                         <br>
                         <br>
@@ -97,14 +88,4 @@
             </div>
         </div>
     </div>
-    <!--FOOTER-->
-    <footer>
-        <br>
-        <br>
-        <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-    </footer>
-</body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-</html>
+    <?php require 'footer.php' ?>

@@ -3,18 +3,7 @@
   - Project
   - Account Settings
 -->
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Field Trip Account</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href='../css/main.css'>
-    <!--template from: https://www.w3schools.com/bootstrap/bootstrap_templates.asp-->
-    <!--https://calame.unibas.ch/wp-content/uploads/Profile-Placeholder.png-->
-</head>
+<?php require 'header.php' ?>
 
 <body>
     <div class='page-wrapper'>
@@ -54,7 +43,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="logo">
-                        <img src="../images/logo.png" alt="placeholder" class="img-thumbnail" width="100px" height="100px">
+                        <img src="./images/logo.png" alt="placeholder" class="img-thumbnail" width="100px" height="100px">
                     </div>
                 </div>
             </div>
@@ -65,9 +54,9 @@
                     <!--USER STUFF-->
                     <div class="col-sm-offset-5 col-sm-3 user-info">
                         <div class="user">
-                            <img src="../images/Profile-Placeholder.png" alt="placeholder" class="img-thumbnail" width="200px" height="200px">
+                            <img src="./images/Profile-Placeholder.png" alt="placeholder" class="img-thumbnail" width="200px" height="200px">
                         </div>
-                        <div class="link">
+                        <div class="link" style="cursor: pointer">
                             <div class="change-pic">
                                 <a data-toggle="modal" data-target="#pic-modal">Change</a>
                             </div>
@@ -75,19 +64,19 @@
                         <br>
                         <br>
                         <p class="username">Username: Andy Dwyer</p>
-                        <div class="link">
+                        <div class="link" style="cursor: pointer">
                             <div class="change-username">
                                 <a data-toggle="modal" data-target="#username-modal">Change</a>
                             </div>
                         </div>
                         <p class="password">Password: ******</p>
-                        <div class="link">
+                        <div class="link" style="cursor: pointer">
                             <div class="change-password">
                                 <a data-toggle="modal" data-target="#password-modal">Change</a>
                             </div>
                         </div>
                         <p class="email">Email: (ADwyer@cityofpawnee.gov)</p>
-                        <div class="link">
+                        <div class="link" style="cursor: pointer">
                             <div class="change-email">
                                 <a data-toggle="modal" data-target="#email-modal">Change</a>
                             </div>
@@ -108,13 +97,8 @@
                             <div class="form-group">
                                 <label class="control-label">Select File</label>
                                 <input id="input-b5" name="input-b5[]" type="file" multiple>
-                                <script>
-                                $(document).on('ready', function() {
-                                    $("#input-b5").fileinput({ showCaption: false });
-                                });
-                                </script>
                                 <input type="pic" class="form-control" id="pic">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+                                <button type="button" class="btn btn-default account_modify-btn" data-dismiss="modal">Submit</button>
                                 <!--http://plugins.krajee.com/file-basic-usage-demo-->
                                 <!--Add dialog after submit-->
                             </div>
@@ -188,14 +172,4 @@
             </div>
         </div>
     </div>
-    <!--FOOTER-->
-    <footer>
-        <br>
-        <br>
-        <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-    </footer>
-</body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-</html>
+    <?php require 'footer.php' ?>

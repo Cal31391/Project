@@ -3,16 +3,7 @@
   - Project
   - Help Screen
 -->
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Field Trip - Help</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href='../css/main.css'>
-</head>
+<?php require 'header.php' ?>
 
 <body>
     <nav class="navbar navbar-default navbar-static-top">
@@ -28,7 +19,7 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="../">Home</a></li>
+                    <li><a href="./">Home</a></li>
                     <li class="active"><a href="#">Help</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -37,7 +28,7 @@
                             Login
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <form action="/action_page.php">
+                            <form action="/db_connect.php">
                                 <div class="form-group login-portal">
                                     <label for="username">Username:</label>
                                     <input type="username" class="form-control" id="username">
@@ -76,31 +67,31 @@
     <div class="col-md-10">
         <div id="home" align="center">
             <h2>Home</h2>
-            <img src="../images/Home_Screen.png" width="800px" height="600px">
+            <img src="./images/Home_Screen.png" width="800px" height="600px">
         </div>
         <div id="login" align="center">
             <h2>Login</h2>
-            <img src="../images/Login_Screen.png" width="800px" height="600px">
+            <img src="./images/Login_Screen.png" width="800px" height="600px">
         </div>
         <div id="dashboard" align="center">
             <h2>Dashboard</h2>
-            <img src="../images/Dashboard_Screen.png" width="800px" height="600px">
+            <img src="./images/Dashboard_Screen.png" width="800px" height="600px">
         </div>
         <div id="account" align="center">
             <h2>Account Settings</h2>
-            <img src="../images/Account_Settings_Screen.png" width="800px" height="600px">
+            <img src="./images/Account_Settings_Screen.png" width="800px" height="600px">
         </div>
         <div id="groups" align="center">
             <h2>Group Settings</h2>
-            <img src="../images/Edit_Groups_Screen.png" width="800px" height="600px">
+            <img src="./images/Edit_Groups_Screen.png" width="800px" height="600px">
         </div>
         <div id="meeting" align="center">
             <h2>Edit Meeting</h2>
-            <img src="../images/Edit_Meeting_Screen.png" width="800px" height="600px">
+            <img src="./images/Edit_Meeting_Screen.png" width="800px" height="600px">
         </div>
         <div id="meeting-info" align="center">
             <h2>Meeting Info</h2>
-            <img src="../images/Meeting_Info_Screen.png" width="800px" height="600px">
+            <img src="./images/Meeting_Info_Screen.png" width="800px" height="600px">
         </div>
         <div class="modal fade" id="password-modal" role="dialog">
             <div class="modal-dialog modal-sm">
@@ -109,7 +100,7 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <form action="/action_page.php">
+                        <form action="/db_connect.php">
                             <div class="form-group">
                                 <label for="email">Email Address:</label>
                                 <input type="email" class="form-control" id="email">
@@ -123,14 +114,4 @@
             </div>
         </div>
     </div>
-    <!--footer-->
-    <footer>
-        <br>
-        <br>
-        <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-    </footer>
-</body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-</html>
+   <?php require 'footer.php' ?>

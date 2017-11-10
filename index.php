@@ -3,16 +3,7 @@
   - Project
   - Homepage
 -->
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Field Trip</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href='./css/main.css'>
-</head>
+<?php require 'header.php' ?>
 
 <body>
     <div class='page-wrapper'>
@@ -30,7 +21,7 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Help</a></li>
+                        <li><a href="/project/help.php">Help</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <div class="dropdown login-dropdown">
@@ -38,18 +29,17 @@
                                 Login
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <form action="/action_page.php">
+                                <form id="login" action="login.php" method="post">
                                     <div class="form-group login-portal">
                                         <label for="username">Username:</label>
-                                        <input type="username" class="form-control" id="username">
-                                        <label for="username">Password:</label>
-                                        <input type="password" class="form-control" id="password">
+                                        <input type="text" class="form-control" name ="username" id="username">
+                                        <label for="password">Password:</label>
+                                        <input type="password" class="form-control" name="password" id="password">
                                         <div class="forgot-password">
                                             <a data-toggle="modal" class="clickable" data-target="#password-modal">Forgot Password?</a>
                                         </div>
                                         <div class="login-submit-btn">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
-                                            <!--Add dialog after submit-->
+                                            <button type="submit" class="btn btn-default" value="Submit" data-dismiss="modal">Submit</button>
                                         </div>
                                     </div>
                                 </form>
@@ -81,7 +71,7 @@
                         <div class="register-title">
                             <h4>Register</h4>
                         </div>
-                        <form action="/action_page.php">
+                        <form action="/login.php">
                             <div class="form-group">
                                 <label for="email">Username:</label>
                                 <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
@@ -99,9 +89,6 @@
                             </div>
                         </form>
                     </div>
-                    <div class="have-account">
-                        <a href="#">If you already have an account, please login</a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -112,28 +99,22 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <form action="/action_page.php">
+                        <form action="/db_connect.php">
                             <div class="form-group">
                                 <label for="email">Email Address:</label>
                                 <input type="email" class="form-control" id="email">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
-                                <!--**FOOTER ISSUE**-->
-                                <!--Add dialog after submit-->
+                                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="autoRespond()">Submit</button> 
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>   
     </div>
-    <!--footer-->
-    <footer>
-        <br>
-        <br>
-        <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-    </footer>
-</body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <div class="modal" id="email-sent">
+        <div class="confirm">
+        	<p>An email with your password has been sent to your email address.</p>
+		</div>
+    </div>
 
-</html>
+<?php require 'footer.php' ?>
