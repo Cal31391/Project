@@ -3,7 +3,10 @@
   - Project
   - Dashboard
 -->
-<?php require 'header.php' ?>
+<?php require 'header.php';
+session_start();
+$user = $_SESSION['username'];
+?>
 
 <body>
     <div class='page-wrapper'>
@@ -43,7 +46,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="logo">
-                        <img src="./images/logo.png" alt="placeholder" class="img-thumbnail" width="100px" height="100px">
+                        <img src="./images/Logo.png" alt="placeholder" class="img-thumbnail" width="100px" height="100px">
                     </div>
                 </div>
             </div>
@@ -51,14 +54,14 @@
             <div class="container-fluid">
                 <!--EVERYTHING ELSE-->
                 <div class="row vertical-align account-elements">
-                    <!--ACCOUNT ElEMENTS-->
+                    <!--ACCOUNT ELEMENTS-->
                     <div class="col-md-offset-2 col-md-3 account">
                         <div class="user">
                             <img src="./images/Profile-Placeholder.png" alt="placeholder" class="img-thumbnail" width="100px" height="100px">
                         </div>
                         <br>
                         <br>
-                        <p id="username">Username: (username)</p>
+                        <p id="username">Username: <?php echo $user; ?></p>
                         <div class="link">
                             <a href="#">Account Settings</a>
                         </div>

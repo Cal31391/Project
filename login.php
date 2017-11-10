@@ -1,6 +1,5 @@
 <?php
-//http://form.guide/php-form/php-login-form.html
-include('db_connect.php');
+include('config/db_connect.php');
 
 session_start();
 
@@ -29,8 +28,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if($count == 1) {
-        $_SESSION['username'] = "username";
-        $_SESSION['login_user'] = $username;
+        $_SESSION['username'] = $username;
 
         header("location: dashboard.php");
     }
