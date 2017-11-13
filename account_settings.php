@@ -167,11 +167,11 @@ $email = $_SESSION['email'];
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <form action="/action_page.php">
+                        <form id="update-email" action="user/update_email.php" method="post">
                             <div class="form-group">
                                 <label for="email">Enter Email:</label>
-                                <input type="email" class="form-control" id="email">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+                                <input type="email" class="form-control" id="email" name="email">
+                                <button type="button" class="btn btn-default" onclick="formSubmit('update-email')" value="Submit" data-dismiss="modal">Submit</button>
                                 <!--Add dialog after submit-->
                             </div>
                         </form>
