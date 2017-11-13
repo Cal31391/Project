@@ -68,7 +68,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="logo">
-                        <img src="./images/logo.png" alt="logo" class="img-thumbnail" width="100px" height="100px">
+                        <img src="./images/Logo.png" alt="logo" class="img-thumbnail" width="100px" height="100px">
                     </div>
                 </div>
             </div>
@@ -90,7 +90,7 @@
                     </div>
                     <div class="link">
                         <div class="edit-groups">
-                            <a href="/project/edit_groups.php">Edit Groups</a>
+                            <a href="edit_groups.php">Edit Groups</a>
                         </div>
                     </div>
                     <br>

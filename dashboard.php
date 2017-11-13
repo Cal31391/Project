@@ -78,7 +78,7 @@ $user = $_SESSION['username'];
                         </div>
                         <br>
                         <div class="new-meeting-link">
-                            <a href="#">New Meeting</a>
+                            <a href="edit_meeting.php">New Meeting</a>
                         </div>
                     </div>
                     <!--CALENDAR STUFF-->
