@@ -3,7 +3,14 @@
   - Project
   - Account Settings
 -->
-<?php require 'header.php' ?>
+<?php require 'header.php';
+
+session_start();
+$user = $_SESSION['username'];
+$email = $_SESSION['email'];
+
+
+?>
 
 <body>
     <div class='page-wrapper'>
@@ -21,7 +28,7 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="dashboard.php">Dashboard</a></li>
                         <li><a href="#">Groups</a></li>
                         <li><a href="#">Help</a></li>
                     </ul>
@@ -43,7 +50,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="logo">
-                        <img src="./images/logo.png" alt="placeholder" class="img-thumbnail" width="100px" height="100px">
+                        <img src="./images/Logo.png" alt="placeholder" class="img-thumbnail" width="100px" height="100px">
                     </div>
                 </div>
             </div>
@@ -63,7 +70,7 @@
                         </div>
                         <br>
                         <br>
-                        <p class="username">Username: Andy Dwyer</p>
+                        <p class="username">Username: <?php echo $user; ?></p>
                         <div class="link" style="cursor: pointer">
                             <div class="change-username">
                                 <a data-toggle="modal" data-target="#username-modal">Change</a>
@@ -75,7 +82,7 @@
                                 <a data-toggle="modal" data-target="#password-modal">Change</a>
                             </div>
                         </div>
-                        <p class="email">Email: (ADwyer@cityofpawnee.gov)</p>
+                        <p class="email">Email: <?php echo $email; ?></p>
                         <div class="link" style="cursor: pointer">
                             <div class="change-email">
                                 <a data-toggle="modal" data-target="#email-modal">Change</a>
@@ -114,12 +121,13 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <form action="/action_page.php">
+                        <form id="update-user" action="user/update_user.php" method="post">
                             <div class="form-group">
                                 <label for="username">Enter New Username:</label>
-                                <input type="username" class="form-control" id="username">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
-                                <!--Add dialog after submit-->
+                                <input type="text" class="form-control" id="username" placeholder="Enter new username" name="username">
+                            </div>
+                            <div class="submit">
+                                <button type="submit" class="btn btn-default" onclick="formSubmit('update-user')" value="Submit" data-dismiss="modal">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -133,18 +141,18 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <form action="/action_page.php">
+                        <form id="update-password" action="user/update-pw.php" method="post">
                             <div class="form-group">
                                 <label for="password">Old Password:</label>
-                                <input type="password" class="form-control" id="password-old">
+                                <input type="password" class="form-control" id="password-old" name="password-old">
                                 <br>
                                 <label for="password">New Password:</label>
-                                <input type="password" class="form-control" id="password-new">
+                                <input type="password" class="form-control" id="password-new" name="password-new">
                                 <br>
                                 <label for="password">Re-enter New Password:</label>
-                                <input type="password" class="form-control" id="password-new-re">
+                                <input type="password" class="form-control" id="password-new-re" name="password-new-re">
                                 <br>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+                                <button type="submit" class="btn btn-default" onclick="formSubmit('update-password')" value="Submit" data-dismiss="modal">Submit</button>
                                 <!--Add dialog after submit-->
                             </div>
                         </form>

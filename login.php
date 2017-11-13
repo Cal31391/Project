@@ -15,9 +15,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     // Prepare a select statement
-    $stmt = $conn->prepare("SELECT username FROM users WHERE username=? and password=?");
+    $stmt = $conn->prepare("SELECT username, email FROM users WHERE username=? and password=?");
     $stmt->execute(array($username, $password));
-    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $rows = $stmt->fetch(PDO::FETCH_ASSOC);
     $count = $stmt->rowCount();
 
     if(empty($_POST["username"])) {
@@ -29,6 +29,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if($count == 1) {
         $_SESSION['username'] = $username;
+        $_SESSION['password'] = $password;
+        $_SESSION['email'] = $rows['email'];
+
 
         header("location: dashboard.php");
     }

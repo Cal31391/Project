@@ -6,6 +6,7 @@
 <?php require 'header.php';
 session_start();
 $user = $_SESSION['username'];
+
 ?>
 
 <body>
@@ -29,7 +30,7 @@ $user = $_SESSION['username'];
                         <li><a href="#">Help</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Account</a></li>
+                        <li><a href="account_settings.php">Account</a></li>
                         <li><a href="#">Logout</a></li>
                     </ul>
                 </div>
@@ -63,7 +64,7 @@ $user = $_SESSION['username'];
                         <br>
                         <p id="username">Username: <?php echo $user; ?></p>
                         <div class="link">
-                            <a href="#">Account Settings</a>
+                            <a href="account_settings.php">Account Settings</a>
                         </div>
                     </div>
                     <!--MEETING SCHEDULE STUFF-->

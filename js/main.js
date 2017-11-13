@@ -60,3 +60,9 @@ var selectAll = function() {
 var clearAll = function() {
     unselectAll();
 }
+
+function formSubmit(element) {
+    document.getElementById(element).submit();
+}
+
+

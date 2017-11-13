@@ -71,10 +71,10 @@
                         <div class="register-title">
                             <h4>Register</h4>
                         </div>
-                        <form action="/login.php">
-                            <div class="form-group">
-                                <label for="email">Username:</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                        <form id="login" action="register.php" method="post">
+                        <div class="form-group">
+                                <label for="username">Username:</label>
+                                <input type="username" class="form-control" id="username" placeholder="Enter username" name="username">
                             </div>
                             <div class="form-group">
                                 <label for="pwd">Enter Password:</label>
@@ -82,7 +82,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="pwd">Re-enter Password:</label>
-                                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                                <input type="password" class="form-control" id="repwd" placeholder="Re-enter password" name="repwd">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
                             </div>
                             <div class="submit">
                                 <button type="submit" class="btn btn-default">Submit</button>
