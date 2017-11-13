@@ -3,7 +3,11 @@
   - Project
   - Edit Meeting
 -->
-<?php require 'header.php' ?>
+<?php require 'header.php';
+session_start();
+$meeting_name = "Meeting Name";
+
+?>
 
 <body>
     <div class='page-wrapper'>
@@ -21,13 +25,13 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">Dashboard</a></li>
-                        <li><a href="#">Groups</a></li>
-                        <li><a href="#">Help</a></li>
+                        <li><a href="dashboard.php">Dashboard</a></li>
+                        <li><a href="edit_groups.php">Groups</a></li>
+                        <li><a href="help.php">Help</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Account</a></li>
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="account_settings.php">Account</a></li>
+                        <li><a href="index.php">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -38,7 +42,7 @@
             <div class="row first-row" align="center">
                 <div class="col-md-offset-4 col-md-4">
                     <div class="title">
-                        <h1>Meeting 1</h1>
+                        <h1 id="meeting-name"><?php echo $meeting_name; ?></h1>
                     </div>
                     <div class="link">
                         <div class="edit-name">
@@ -56,9 +60,8 @@
                                     <form action="/action_page.php">
                                         <div class="form-group">
                                             <label for="meeting-name">Enter Meeting Name</label>
-                                            <input type="name" class="form-control" id="meeting-name">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
-                                            <!--Add dialog after submit-->
+                                            <input type="text" class="form-control" id="new-meeting-name" name="new-meeting-name">
+                                            <button type="button" class="btn btn-default" onclick="changeName()" data-dismiss="modal">Submit</button>
                                         </div>
                                     </form>
                                 </div>
@@ -79,15 +82,11 @@
             <div class="row second-row">
                 <!--GROUP INFO, DATES, MAP-->
                 <div class="col-md-offset-1 col-md-3 second-row-col-1-meeting">
-                    <div class="dropdown">
-                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Group
-                            <span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Group 1</a></li>
-                            <li><a href="#">Group 2</a></li>
-                            <li><a href="#">Group 3</a></li>
-                        </ul>
-                    </div>
+                        <select class="form-control">
+                            <option id="Group1" value="Coffee Shop Group">Coffee Shop Group</option>
+                            <option value="Group 2">Library Group</option>
+                            <option value="Group 3">Bowling Group</option>
+                        </select>
                     <div class="link">
                         <div class="edit-groups">
                             <a href="edit_groups.php">Edit Groups</a>
@@ -95,12 +94,12 @@
                     </div>
                     <br>
                     <div class="group-box-elements">
-                        <div class="group-box-meeting">
-                            <a href="#" class="list-group-item list-group-item-action">Group member 1</a>
-                            <a href="#" class="list-group-item list-group-item-action">Group member 2</a>
-                            <a href="#" class="list-group-item list-group-item-action">Group member 3</a>
-                            <a href="#" class="list-group-item list-group-item-action">Group member 4</a>
-                            <a href="#" class="list-group-item list-group-item-action">Group member 5</a>
+                        <div class="group-box-meeting" id="group-members">
+                            <li class="list-group-item list-group-item-action" style="cursor: pointer">Group member 1</li>
+                            <li class="list-group-item list-group-item-action" style="cursor: pointer">Group member 2</li>
+                            <li class="list-group-item list-group-item-action" style="cursor: pointer">Group member 3</li>
+                            <li class="list-group-item list-group-item-action" style="cursor: pointer">Group member 4</li>
+                            <li class="list-group-item list-group-item-action" style="cursor: pointer">Group member 5</li>
                         </div>
                         <div class="select-buttons">
                             <button type="button" class="btn" onclick="selectAll()">Select All</button>

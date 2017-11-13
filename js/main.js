@@ -65,4 +65,11 @@ function formSubmit(element) {
     document.getElementById(element).submit();
 }
 
+var changeName = function() {
+    var text = document.getElementById("new-meeting-name").value;
+    document.getElementById("meeting-name").innerHTML = text;
+}
+
+
+
 
