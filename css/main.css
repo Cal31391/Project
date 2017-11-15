@@ -282,8 +282,16 @@ footer {
 
 
 
-
-
+.edit-groups {
+    float: right;
+    text-decoration: underline;
+}
+#group-members {
+    overflow-y: scroll;
+    max-height: 250px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
 .second-row-col-1 {
     margin-right: 3%;
 }

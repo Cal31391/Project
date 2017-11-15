@@ -17,6 +17,10 @@ $(document).ready(function() {
 
         $(this).addClass('active')
     })
+
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    })
 });
 
 

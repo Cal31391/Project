@@ -21,13 +21,13 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="/project/dashboard.php">Dashboard</a></li>
-                        <li><a href="#">Groups</a></li>
-                        <li><a href="#">Help</a></li>
+                        <li><a href="dashboard.php">Dashboard</a></li>
+                        <li><a href="edit_groups.php">Groups</a></li>
+                        <li><a href="help.php">Help</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Account</a></li>
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="account_settings.php">Account</a></li>
+                        <li><a href="index.php">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -39,14 +39,11 @@
                 <div class="col-md-offset-4 col-md-4">
                     <div class="title">
                         <h1>Meeting Name</h1>
-                        <div class="link">
-                            <a href="#">Edit</a>
-                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="logo">
-                        <img src="./images/logo.png" alt="logo" class="img-thumbnail" width="100px" height="100px">
+                        <img src="./images/Logo.png" alt="logo" class="img-thumbnail" width="100px" height="100px">
                     </div>
                 </div>
             </div>
@@ -55,13 +52,13 @@
         <div class="container-fluid second-row">
             <!--SECOND ROW-->
             <div class="col-md-4 group-module">
-                <div class="group-box">
+                <div class="group-box"><!--make dynamic-->
                     <h4 class="group-name">Group Name</h4>
-                    <a href="#" class="list-group-item list-group-item-action">Group member 1</a>
-                    <a href="#" class="list-group-item list-group-item-action">Group member 2</a>
-                    <a href="#" class="list-group-item list-group-item-action">Group member 3</a>
-                    <a href="#" class="list-group-item list-group-item-action">Group member 4</a>
-                    <a href="#" class="list-group-item list-group-item-action">Group member 5</a>
+                    <li class="list-group-item list-group-item">Group member 1</li>
+                    <li class="list-group-item list-group-item">Group member 2</li>
+                    <li class="list-group-item list-group-item">Group member 3</li>
+                    <li class="list-group-item list-group-item">Group member 4</li>
+                    <li class="list-group-item list-group-item">Group member 5</li>
                 </div>
             </div>
             <div class="col-md-4 meeting-calendar">
@@ -80,7 +77,7 @@
             </div>
         </div>
         <div class="row notes">
-            <a href="#notes" class="meeting-notes" data-toggle="popover" data-content="Notes about the meeting... anything that the user needs to know">Meeting Notes</a>
+            <button class="meeting-notes" role="tooltip" data-toggle="popover" data-content="Notes about the meeting... anything that the user needs to know">Meeting Notes</button>
         </div>
     </div>
 <script>//placeholder//

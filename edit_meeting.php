@@ -57,13 +57,13 @@ $meeting_name = "Meeting Name";
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="/action_page.php">
+                                    <!--use ajax here?-->
                                         <div class="form-group">
                                             <label for="meeting-name">Enter Meeting Name</label>
                                             <input type="text" class="form-control" id="new-meeting-name" name="new-meeting-name">
                                             <button type="button" class="btn btn-default" onclick="changeName()" data-dismiss="modal">Submit</button>
                                         </div>
-                                    </form>
+
                                 </div>
                             </div>
                         </div>
@@ -100,6 +100,8 @@ $meeting_name = "Meeting Name";
                             <li class="list-group-item list-group-item-action" style="cursor: pointer">Group member 3</li>
                             <li class="list-group-item list-group-item-action" style="cursor: pointer">Group member 4</li>
                             <li class="list-group-item list-group-item-action" style="cursor: pointer">Group member 5</li>
+                            <li class="list-group-item list-group-item-action" style="cursor: pointer">Group member 6</li>
+                            <li class="list-group-item list-group-item-action" style="cursor: pointer">Group member 7</li>
                         </div>
                         <div class="select-buttons">
                             <button type="button" class="btn" onclick="selectAll()">Select All</button>
@@ -118,14 +120,14 @@ $meeting_name = "Meeting Name";
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="/action_page.php">
+
                                             <div class="form-group">
                                                 <label for="group-name">Enter Group Name</label>
                                                 <input type="name" class="form-control" id="group-name">
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
                                                 <!--Add dialog after submit-->
                                             </div>
-                                        </form>
+
                                     </div>
                                 </div>
                             </div>
@@ -172,13 +174,13 @@ $meeting_name = "Meeting Name";
     </div>
     <script>
       function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
+        var knoxville = {lat: 35.965, lng: -83.927};
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru
+          zoom: 8,
+          center: knoxville
         });
         var marker = new google.maps.Marker({
-          position: uluru,
+          position: knoxville,
           map: map
         });
       }

@@ -26,12 +26,12 @@ $user = $_SESSION['username'];
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Dashboard</a></li>
-                        <li><a href="#">Groups</a></li>
-                        <li><a href="#">Help</a></li>
+                        <li><a href="edit_groups.php">Groups</a></li>
+                        <li><a href="help.php">Help</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="account_settings.php">Account</a></li>
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="index.php">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -71,9 +71,9 @@ $user = $_SESSION['username'];
                     <div class="col-md-2">
                         <h4 class="schedule">Scheduled Meetings</h4>
                         <div class="list" align="center">
-                            <a href="#">meeting name (day,time)</a>
+                            <a href="meeting_info.php">meeting name (day,time)</a>
                             <br>
-                            <a href="#">meeting name (day,time)</a>
+                            <a href="meeting_info.php">meeting name (day,time)</a>
                             <br>
                         </div>
                         <br>
