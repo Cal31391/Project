@@ -26,5 +26,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $count = $stmt->rowCount();
     $_SESSION['email'] = $email;
 
-    header("location: account_settings.php");
+    header("location: ../account_settings.php");
 }

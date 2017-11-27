@@ -5,8 +5,12 @@
 -->
 <?php require 'header.php';
 session_start();
-$user = $_SESSION['username'];
-
+if(session_id() == '' || !isset($_SESSION)) {
+    header("location:index.php");
+}
+else {
+    $user = $_SESSION['username'];
+}
 ?>
 
 <body>
@@ -21,7 +25,7 @@ $user = $_SESSION['username'];
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Field Trip</a>
+                    <a class="navbar-brand" href="dashboard.php">Field Trip</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">

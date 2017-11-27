@@ -3,7 +3,16 @@
   - Project
   - Edit Groups 
 -->
-<?php require 'header.php' ?>
+<?php require 'header.php';
+session_start();
+if(session_id() == '' || !isset($_SESSION)) {
+    header("location:index.php");
+}
+else {
+//do stuff...
+}
+
+?>
 
 <body>
     <div class='page-wrapper'>
@@ -17,17 +26,17 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Field Trip</a>
+                    <a class="navbar-brand" href="dashboard.php">Field Trip</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="dashboard.php">Dashboard</a></li>
                         <li class="active"><a href="#">Groups</a></li>
-                        <li><a href="#">Help</a></li>
+                        <li><a href="help.php">Help</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Account</a></li>
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="account_settings.php">Account</a></li>
+                        <li><a href="logout.php">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -43,7 +52,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="logo">
-                        <img src="./images/logo.png" alt="logo" class="img-thumbnail" width="100px" height="100px">
+                        <img src="./images/Logo.png" alt="logo" class="img-thumbnail" width="100px" height="100px">
                     </div>
                 </div>
             </div>

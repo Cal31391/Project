@@ -6,9 +6,14 @@
 <?php require 'header.php';
 
 session_start();
-$user = $_SESSION['username'];
-$email = $_SESSION['email'];
 
+if(session_id() == '' || !isset($_SESSION)) {
+    header("location:index.php");
+}
+else {
+    $user = $_SESSION['username'];
+    $email = $_SESSION['email'];
+}
 
 ?>
 
@@ -24,17 +29,17 @@ $email = $_SESSION['email'];
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Field Trip</a>
+                    <a class="navbar-brand" href="dashboard.php">Field Trip</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="dashboard.php">Dashboard</a></li>
-                        <li><a href="#">Groups</a></li>
-                        <li><a href="#">Help</a></li>
+                        <li><a href="edit_groups.php">Groups</a></li>
+                        <li><a href="help.php">Help</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="#">Account</a></li>
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="logout.php">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -141,7 +146,7 @@ $email = $_SESSION['email'];
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <form id="update-password" action="user/update-pw.php" method="post">
+                        <form id="update-password" action="user/update_pw.php" method="post">
                             <div class="form-group">
                                 <label for="password">Old Password:</label>
                                 <input type="password" class="form-control" id="password-old" name="password-old">

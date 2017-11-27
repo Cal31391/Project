@@ -281,13 +281,16 @@ footer {
 }
 
 
-
+.list-group-item-action{
+    cursor: pointer;
+}
 .edit-groups {
     float: right;
     text-decoration: underline;
 }
 #group-members {
     overflow-y: scroll;
+    height: 250px;
     max-height: 250px;
     margin-bottom: 10px;
     margin-top: 10px;
