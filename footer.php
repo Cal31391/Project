@@ -8,10 +8,12 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type='text/javascript' src='./js/main.js'></script>
+<script type='text/javascript' src='./js/jquery.timepicker.js'></script>
 <script>
   $( function() {
-    $( "#datepicker1" ).datepicker();
-    $( "#datepicker2" ).datepicker();
+    $( "#datepicker" ).datepicker();
+    $( "#time1" ).timepicker();
+    $( "#time2" ).timepicker();
   } );
   </script>
 

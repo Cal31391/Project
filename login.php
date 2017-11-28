@@ -5,7 +5,6 @@ session_start();
 
 // Define variables and initialize with empty values
 $username = $password = "";
-$username_err = $password_err = "";
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -20,17 +19,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $rows = $stmt->fetch(PDO::FETCH_ASSOC);
     $count = $stmt->rowCount();
 
-    if(empty($_POST["username"])) {
-        $username_err = "Incorrect username";
-    }
-    if(empty($_POST["password"])) {
-        $password_err = "Incorrect password";
-    }
-
     if($count == 1) {
         $_SESSION['username'] = $username;
         $_SESSION['password'] = $password;
         $_SESSION['email'] = $rows['email'];
+
 
 
         header("location: dashboard.php");

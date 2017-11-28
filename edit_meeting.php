@@ -9,7 +9,7 @@ if(session_id() == '' || !isset($_SESSION)) {
     header("location:index.php");
 }
 else {
-    $meeting_name = "Meeting Name";
+    $meeting_name = "(Meeting Name)";
     include("config/db_connect.php");
 }
 ?>
@@ -47,7 +47,7 @@ else {
             <div class="row first-row" align="center">
                 <div class="col-md-offset-4 col-md-4">
                     <div class="title">
-                        <h1 id="meeting-name"><?php echo $meeting_name; ?></h1>
+                        <h1 id="meeting-name" name="meeting-name"><?php echo $meeting_name; ?></h1>
                     </div>
                     <div class="link">
                         <div class="edit-name">
@@ -150,7 +150,8 @@ else {
             <div class="row third-row">
                 <div class="col-md-offset-4 col-md-4 third-row-col-1">
                     <button type="button" class="btn" onclick="clearAll()">Clear</button>
-                    <button type="button" class="btn">Save</button>
+                    <button type="button" class="btn" onclick="saveMeeting()">Save</button>
+                    <span class="popuptext" id="confirmSaved">Saved!</span>
                 </div>
             </div>
         </div>

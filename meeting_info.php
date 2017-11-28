@@ -39,6 +39,7 @@
                 <div class="col-md-offset-4 col-md-4">
                     <div class="title">
                         <h1>Meeting Name</h1>
+                        <a href="" id="edit_meeting">Edit</a>
                     </div>
                 </div>
                 <div class="col-md-4">

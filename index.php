@@ -29,12 +29,14 @@
                                 Login
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <form id="login" action="login.php" method="post">
+                                <form id="login" action="login.php" method="post" onsubmit="return validateFields()">
                                     <div class="form-group login-portal">
                                         <label for="username">Username:</label>
                                         <input type="text" class="form-control" name ="username" id="username">
+                                            <span class="warningtext" id="usernameWarn">Enter a username</span>
                                         <label for="password">Password:</label>
                                         <input type="password" class="form-control" name="password" id="password">
+                                            <span class="warningtext" id="passwordWarn">Enter a password</span>
                                         <div class="forgot-password">
                                             <a data-toggle="modal" class="clickable" data-target="#password-modal">Forgot Password?</a>
                                         </div>
@@ -71,22 +73,27 @@
                         <div class="register-title">
                             <h4>Register</h4>
                         </div>
-                        <form id="login" action="register.php" method="post">
+                        <form id="login" action="register.php" method="post" onsubmit="return validateRegFields()">
                         <div class="form-group">
                                 <label for="username">Username:</label>
-                                <input type="username" class="form-control" id="username" placeholder="Enter username" name="username">
+                                <input type="username" class="form-control" id="user" name="username">
+                                <span class="warningtext" id="regUserWarn">Enter a username</span>
                             </div>
                             <div class="form-group">
                                 <label for="pwd">Enter Password:</label>
-                                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                                <input type="password" class="form-control" id="pwd" name="pwd">
+                                <span class="warningtext" id="regPassWarn">Enter a password</span>
                             </div>
                             <div class="form-group">
                                 <label for="pwd">Re-enter Password:</label>
-                                <input type="password" class="form-control" id="repwd" placeholder="Re-enter password" name="repwd">
+                                <input type="password" class="form-control" id="repwd" name="repwd">
+                                <span class="warningtext" id="regRePassWarn">Re-enter password</span>
+                                <span class="warningtext" id="regMatchWarn">Passwords do not match!</span>
                             </div>
                             <div class="form-group">
                                 <label for="email">Email:</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                <input type="email" class="form-control" id="email"  name="email">
+                                <span class="warningtext" id="regEmailWarn">Enter an email</span>
                             </div>
                             <div class="submit">
                                 <button type="submit" class="btn btn-default">Submit</button>

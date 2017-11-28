@@ -259,6 +259,20 @@ footer {
     text-align: center;
     font-weight: bold;
 }
+.time {
+    margin-bottom: 4px;
+}
+
+.warningtext {
+    color: red;
+    font-size: 10px;
+    display: none;
+}
+
+#edit_meeting {
+    text-decoration: underline;
+    font-size: 10px;
+}
 
 .meeting-links {
     text-align: center;
@@ -370,3 +384,19 @@ footer {
 
     display: inline-block;
 }
+
+#confirmSaved {
+    display: none;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
