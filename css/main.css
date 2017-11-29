@@ -231,21 +231,23 @@ footer {
 }
 
 .member-names {
-    text-align: center;
     padding: 0;
+    margin-left: 8px;
 }
 
-.delete-sign {
+.delete-member-link {
     color: red;
+    padding: 2%;
+    text-decoration: underline;
+    font-size: 9px;
+    margin-right: 2px;
 }
 
-.add-sign {
+.add-member-link {
     color: green;
-}
-
-.mem-name-box {
-    margin-left: 1px;
-    text-align: center;
+    text-decoration: underline;
+    font-size: 9px;
+    float: right;
 }
 
 .meetings-module {
@@ -302,6 +304,13 @@ footer {
     float: right;
     text-decoration: underline;
 }
+
+.save-group-btn {
+    margin-left: 0;
+    margin-right: 12px;
+    float: right;
+}
+
 #group-members {
     overflow-y: scroll;
     height: 250px;

@@ -17,3 +17,23 @@ $stmt = $conn->prepare("INSERT INTO meetings(name, day, start_time, end_time, no
 $stmt->execute(array($name,$day,$startTime,$endTime,$notes, $group_name));
 $count = $stmt->rowCount();
 
+$stmt = $conn->prepare("SELECT id FROM meetings WHERE name=?");
+$stmt->execute(array($name));
+$rows = $stmt->fetch(PDO::FETCH_ASSOC);
+$count = $stmt->rowCount();
+
+$meeting_id = $rows['id'];
+
+$stmt = $conn->prepare("SELECT id FROM groups WHERE name=?");
+$stmt->execute(array($group_name));
+$rows = $stmt->fetch(PDO::FETCH_ASSOC);
+$count = $stmt->rowCount();
+
+$group_id = $rows['id'];
+
+$stmt = $conn->prepare("INSERT INTO group_meeting(meeting_id, group_id) VALUES(?, ?)");
+$stmt->execute(array($meeting_id, $group_id));
+$count = $stmt->rowCount();
+
+
+

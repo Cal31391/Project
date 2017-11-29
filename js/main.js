@@ -30,6 +30,22 @@ $(document).ready(function() {
         }
     });
 
+    $("#group-names-edit").change(function() {
+        var name_id = $(this).val();
+        console.log(name_id);
+        if(name_id != "" && name_id != 1) {
+            $.ajax({
+                url:"./group/load_edit_group.php",
+                data:{n_id:name_id},
+                type:'POST',
+                success:function(response) {
+                    var resp = $.trim(response);
+                    $("#member-names").html(resp);
+                }
+            });
+        }
+    });
+
     //figure this out sometime!!!!//
     $(list_group_item).click(function() {
         alert("click");
@@ -44,7 +60,54 @@ $(document).ready(function() {
 
 });
 
+var deleteName = function(e) {
+    console.log("click");
+    var element = $("#"+e);
+    var bad_name = $("#"+e).text();
+    var name = bad_name.substr(6);
+    var group = $("#group-names-edit").val();
+    console.log(name);
+    if(name != "") {
+        $.ajax({
+            url:"./group/delete_group_member.php",
+            data:{n:name, g:group},
+            type:'POST',
+            success:function(response) {
+                var resp = $.trim(response);
+            }
+        });
+        $(element).remove();
+    }
+};
 
+var addName = function() {
+    console.log("click");
+    var user = $("#mem-name-box").val();
+    var group = $("#group-names-edit").val();
+    console.log(user);
+    if(user != "") {
+        $.ajax({
+            url:"./group/add_group_member.php",
+            data:{n:user, g:group},
+            type:'POST',
+            success:function(response) {
+                var resp = $.trim(response);
+            }
+        });
+    }
+
+    if(group != "") {
+        $.ajax({
+            url:"./group/load_edit_group.php",
+            data:{n_id:group},
+            type:'POST',
+            success:function(response) {
+                var resp = $.trim(response);
+                $("#member-names").html(resp);
+            }
+        });
+    }
+};
 
 var saveMeeting = function() {
     var popup = $("#confirmSaved");
@@ -72,6 +135,35 @@ var saveMeeting = function() {
     }
 };
 
+var saveGroup = function(n,o) {
+    var popup = $("#confirmSaved");
+
+    var name = n;
+    var old_name = o;
+    console.log(old_name);
+    console.log(name);
+    if(name != "") {
+        $.ajax({
+            url:"./group/save_group.php",
+            data:{n:name, old:old_name},
+            type:'POST',
+            success:function(response) {
+                var resp = $.trim(response);
+            }
+        });
+
+        $(popup).css({ display: "block" });
+        $(popup).delay(2000).fadeOut(450);
+    }
+
+
+};
+
+var createGroup = function() {
+    //todo
+}
+
+
 
 var selectMembers = function() {
     $(".list-group-item-action").click(function() {
@@ -92,8 +184,8 @@ var autoRespond = function() {
     $(modal).delay(3000).fadeOut(450);
 };
 
-var confirmDelete = function() {
-    var modal = $("#delete-group-confirm");
+/*var confirmDelete = function() {
+    var modal = $("#save-group-confirm");
 
     $(modal).css({ display: "block" });
 
@@ -103,7 +195,7 @@ var confirmDelete = function() {
     $("#modal-btn-no").on("click", function() {
         $(modal).css({ display: "none" });
     });
-};
+};*/
 
 var unselectAll = function() {
     var list_group_item = $(".list-group-item-action");
@@ -125,6 +217,10 @@ var clearAll = function() {
     unselectAll();
 };
 
+var reload = function() {
+    location.reload();
+}
+
 function formSubmit(element) {
     document.getElementById(element).submit();
 }
@@ -132,6 +228,12 @@ function formSubmit(element) {
 var changeName = function() {
     var text = document.getElementById("new-meeting-name").value;
     document.getElementById("meeting-name").innerHTML = text;
+};
+
+var changeGroupName = function() {
+    var old_name = document.getElementById("group-names-edit").value;
+    var text = document.getElementById("new-group-name").value;
+    saveGroup(text, old_name);
 };
 
 var validateFields = function() {

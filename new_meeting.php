@@ -111,10 +111,6 @@ else {
                 <div class="group-box-elements">
                     <div class="group-box-meeting" id="group-members" name="group-members">
                     </div>
-                    <div class="select-buttons">
-                        <button type="button" class="btn" onclick="selectAll()">Select All</button>
-                        <button type="button" class="btn" onclick="unselectAll()">Unselect All</button>
-                    </div>
                 </div>
             </div>
             <div class="col-md-3 second-row-col-2">

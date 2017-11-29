@@ -9,7 +9,8 @@ if(session_id() == '' || !isset($_SESSION)) {
     header("location:index.php");
 }
 else {
-//do stuff...
+    include("config/db_connect.php");
+    $user = $_SESSION['username'];
 }
 
 ?>
@@ -57,32 +58,63 @@ else {
                 </div>
             </div>
         </div>
+
+        <div class="col-md-offset-5 col-md-2 group-selector">
+            <select class="form-control" id="group-names-edit" name="group-names-edit">
+                <?php
+                $stmt = $conn->prepare("SELECT * FROM groups");
+                $stmt->execute();
+                $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                $count = $stmt->rowCount();
+                echo "<option value='" . 0 . "'>" . "(Select Group)" . "</option>";
+                if ($count > 0) {
+                    for($i=0; $i<$count; $i++) {
+                        $row = $rows[$i];
+                        echo "<option value='" . $row["name"] . "'>" . $row['name'] . "</option>";
+                    }
+                }
+                ?>
+            </select>
+        </div>
+        <div id="reload-btn">
+            <button type="button " class="btn reload-btn" onclick="reload()">Reload</button>
+            <button type="button " class="btn new-group-btn" onclick="createGroup()">New Group</button>
+        </div>
+
+
+
+
         <!--CONTAINER FOR SECOND ROW-->
         <div class="container-fluid second-row">
             <!--SECOND ROW-->
             <div class="row group">
                 <div class="row group-info">
                     <div class="col-md-4 module-title">
-                        <h4 class="group-name">Coffee Shop Group</h4>
                         <div class="group-image">
-                            <img src="./images/coffee.jpg" alt="coffee" class="img-thumbnail" width="200px" height="150px">
+                            <img src="./images/placeholder.png" alt="coffee" class="img-thumbnail" width="200px" height="150px">
                             <!--https://media.timeout.com/images/100893385/image.jpg-->
                         </div>
                     </div>
                     <div class="col-md-3 members-module">
                         <h5 class="members">Members</h5>
-                        <ul style="list-style-type: none" class="member-names">
-                            <li id="name"><a href="#"><span class="glyphicon glyphicon-minus delete-sign"></span></a> fname lname</li>
-                            <li id="name"><a href="#"><span class="glyphicon glyphicon-minus delete-sign"></span></a> fname lname</li>
-                            <li id="name"><a href="#"><span class="glyphicon glyphicon-minus delete-sign"></span></a> fname lname</li>
-                            <li id="name"><a href="#"><span class="glyphicon glyphicon-minus delete-sign"></span></a> fname lname</li>
-                            <li id="name"><a href="#"><span class="glyphicon glyphicon-minus delete-sign"></span></a> fname lmane</li>
+                        <ul style="list-style-type: none" class="member-names" id="member-names">
                         </ul>
-                        <a href="#"><span class="glyphicon glyphicon-plus add-sign"></span></a>
-                        <input type="text" class="mem-name-box" id="mem-name-box" name="member-name " placeholder="Enter name ">
-                        <div class="save-btn-div ">
-                            <button type="button " class="btn save-btn">Save</button>
-                        </div>
+                            <select class="form-control" id="mem-name-box" name="member-name">
+                                <?php
+                                $stmt = $conn->prepare("SELECT * FROM users");
+                                $stmt->execute();
+                                $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                $count = $stmt->rowCount();
+                                echo "<option value='" . 0 . "'>" . "(Select Name)" . "</option>";
+                                if ($count > 0) {
+                                    for($i=0; $i<$count; $i++) {
+                                        $row = $rows[$i];
+                                        echo "<option value='" . $row["username"] . "'>" . $row['username'] . "</option>";
+                                    }
+                                }
+                                ?>
+                            </select>
+                        <a class='add-member-link' style='cursor: pointer' onclick='addName();'>Add</a>
                     </div>
                     <div class="col-md-3 meetings-module ">
                         <h5 class="meetings ">Meetings</h5>
@@ -93,92 +125,32 @@ else {
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-offset-10 col-md-2 delete-group-btn">
-                    <button type="button " class="btn delete-btn" onclick="confirmDelete()">Delete Group</button>
-                </div>
-            </div>
-            <div class="row group ">
-                <div class="row group-info ">
-                    <div class="col-md-4 module-title ">
-                        <h4 class="group-name ">Library Group</h4>
-                        <div class="group-image ">
-                            <img src="./images/library.jpg" alt="library" class="img-thumbnail " width="200px " height="150px ">
-                            <!--https://usatcollege.files.wordpress.com/2014/09/139786707.jpg-->
-                        </div>
-                    </div>
-                    <div class="col-md-3 members-module ">
-                        <h5 class="members ">Members</h5>
-                        <ul style="list-style-type: none " class="member-names ">
-                            <li id="name "><a href="# "><span class="glyphicon glyphicon-minus delete-sign "></span></a> fname lname</li>
-                            <li id="name "><a href="# "><span class="glyphicon glyphicon-minus delete-sign "></span></a> fname lname</li>
-                            <li id="name "><a href="# "><span class="glyphicon glyphicon-minus delete-sign "></span></a> fname lname</li>
-                            <li id="name "><a href="# "><span class="glyphicon glyphicon-minus delete-sign "></span></a> fname lname</li>
-                            <li id="name "><a href="# "><span class="glyphicon glyphicon-minus delete-sign "></span></a> fname lmane</li>
-                        </ul>
-                        <a href="# "><span class="glyphicon glyphicon-plus add-sign "></span></a>
-                        <input type="text " class="mem-name-box" id="mem-name-box" name="member-name " placeholder="Enter name ">
-                        <div class="save-btn-div ">
-                            <button type="button" class="btn save-btn">Save</button>
-                        </div>
-                    </div>
-                    <div class="col-md-3 meetings-module ">
-                        <h5 class="meetings ">Meetings</h5>
-                        <ul style="list-style-type: none " class="meeting-links ">
-                            <li id="name ">Meeting 1 (day/time)<a href="# " class="link ">Info</a><a href="# " class="link ">Edit</a></li>
-                            <li id="name ">Meeting 2 (day/time)<a href="# " class="link ">Info</a><a href="# " class="link ">Edit</a></li>
-                            <li id="name ">Meeting 3 (day/time)<a href="# " class="link ">Info</a><a href="# " class="link ">Edit</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-offset-10 col-md-2 delete-group-btn ">
-                    <button type="button " class="btn delete-btn " onclick="confirmDelete()">Delete Group</button>
-                </div>
-            </div>
-            <div class="row group ">
-                <div class="row group-info ">
-                    <div class="col-md-4 module-title ">
-                        <h4 class="group-name ">Bowling Group</h4>
-                        <div class="group-image ">
-                            <img src="./images/bowling.jpg " alt="bowling " class="img-thumbnail " width="200px " height="150px ">
-                            <!--http://www.lincolnbowl.co.uk/wp-content/uploads/2016/02/bggg.jpg-->
-                        </div>
-                    </div>
-                    <div class="col-md-3 members-module ">
-                        <h5 class="members ">Members</h5>
-                        <ul style="list-style-type: none " class="member-names ">
-                            <li id="name "><a href="# "><span class="glyphicon glyphicon-minus delete-sign "></span></a> fname lname</li>
-                            <li id="name "><a href="# "><span class="glyphicon glyphicon-minus delete-sign "></span></a> fname lname</li>
-                            <li id="name "><a href="# "><span class="glyphicon glyphicon-minus delete-sign "></span></a> fname lname</li>
-                            <li id="name "><a href="# "><span class="glyphicon glyphicon-minus delete-sign "></span></a> fname lname</li>
-                            <li id="name "><a href="# "><span class="glyphicon glyphicon-minus delete-sign "></span></a> fname lmane</li>
-                        </ul>
-                        <a href="# "><span class="glyphicon glyphicon-plus add-sign "></span></a>
-                        <input type="text " class="mem-name-box" id="mem-name-box " name="member-name " placeholder="Enter name ">
-                        <div class="save-btn-div ">
-                            <button type="button " class="btn save-btn ">Save</button>
-                        </div>
-                    </div>
-                    <div class="col-md-3 meetings-module ">
-                        <h5 class="meetings ">Meetings</h5>
-                        <ul style="list-style-type: none " class="meeting-links ">
-                            <li id="name ">Meeting 1 (day/time)<a href="# " class="link ">Info</a><a href="# " class="link ">Edit</a></li>
-                            <li id="name ">Meeting 2 (day/time)<a href="# " class="link ">Info</a><a href="# " class="link ">Edit</a></li>
-                            <li id="name ">Meeting 3 (day/time)<a href="# " class="link ">Info</a><a href="# " class="link ">Edit</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-offset-10 col-md-2 delete-group-btn ">
-                    <button type="button" class="btn delete-btn" onclick="confirmDelete()">Delete Group</button>
+                <div class="col-md-offset-10 col-md-2 save-group-btn">
+                    <button type="button " class="btn save-btn" data-toggle="modal" data-target="#edit-group-name-modal">Change Group Name</button>
+                    <span class="popuptext" id="confirmSaved">Saved!</span>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="modal" id="delete-group-confirm">
-        <div class="confirm">
-            <p>Are you sure you want to delete this group?</p>
-            <button type="button" class="btn btn-default" id="modal-btn-yes">Yes</button>
-            <button type="button" class="btn btn-primary" id="modal-btn-no">No</button>
+    <div class="modal fade" id="edit-group-name-modal" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="group-name">Enter Group Name</label>
+                        <input type="text" class="form-control" id="new-group-name" name="new-group-name">
+                        <button type="button" class="btn btn-default" onclick="changeGroupName()" data-dismiss="modal">Submit</button>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
+</body>
+
+
 <?php require 'footer.php' ?>
