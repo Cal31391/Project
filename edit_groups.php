@@ -27,17 +27,17 @@ else {
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="dashboard.php">Field Trip</a>
+                    <a class="navbar-brand" href="../dashboard.php">Field Trip</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="dashboard.php">Dashboard</a></li>
+                        <li><a href="../dashboard.php">Dashboard</a></li>
                         <li class="active"><a href="#">Groups</a></li>
-                        <li><a href="help.php">Help</a></li>
+                        <li><a href="../help.php">Help</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="account_settings.php">Account</a></li>
-                        <li><a href="logout.php">Logout</a></li>
+                        <li><a href="../account_settings.php">Account</a></li>
+                        <li><a href="../logout.php">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -53,7 +53,7 @@ else {
                 </div>
                 <div class="col-md-4">
                     <div class="logo">
-                        <img src="./images/Logo.png" alt="logo" class="img-thumbnail" width="100px" height="100px">
+                        <img src="../images/Logo.png" alt="logo" class="img-thumbnail" width="100px" height="100px">
                     </div>
                 </div>
             </div>
@@ -78,7 +78,7 @@ else {
         </div>
         <div id="reload-btn">
             <button type="button " class="btn reload-btn" onclick="reload()">Reload</button>
-            <button type="button " class="btn new-group-btn" onclick="createGroup()">New Group</button>
+            <button type="button " class="btn new-group-btn" data-toggle="modal" data-target="#create-group-name-modal"">New Group</button>
         </div>
 
 
@@ -91,7 +91,7 @@ else {
                 <div class="row group-info">
                     <div class="col-md-4 module-title">
                         <div class="group-image">
-                            <img src="./images/placeholder.png" alt="coffee" class="img-thumbnail" width="200px" height="150px">
+                            <img src="../images/placeholder.png" alt="coffee" class="img-thumbnail" width="200px" height="150px">
                             <!--https://media.timeout.com/images/100893385/image.jpg-->
                         </div>
                     </div>
@@ -144,6 +144,23 @@ else {
                         <label for="group-name">Enter Group Name</label>
                         <input type="text" class="form-control" id="new-group-name" name="new-group-name">
                         <button type="button" class="btn btn-default" onclick="changeGroupName()" data-dismiss="modal">Submit</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="create-group-name-modal" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="group-name">Enter Group Name</label>
+                        <input type="text" class="form-control" id="new-create-group-name" name="new-create-group-name">
+                        <button type="button" class="btn btn-default" onclick="createGroup()" data-dismiss="modal">Submit</button>
                     </div>
 
                 </div>

@@ -152,16 +152,44 @@ var saveGroup = function(n,o) {
             }
         });
 
+        reloadGroups();
+
         $(popup).css({ display: "block" });
         $(popup).delay(2000).fadeOut(450);
     }
 
+};
 
+var reloadGroups = function() {
+    $.ajax({
+        url:"./group/load_edit_group_names.php",
+        data:{},
+        type:'POST',
+        success:function(response) {
+            var resp = $.trim(response);
+            $("#group-names-edit").html(resp);
+        }
+    });
 };
 
 var createGroup = function() {
-    //todo
-}
+    var group_name = $("#new-create-group-name").val();
+    console.log(group_name);
+
+    if(group_name != "") {
+        $.ajax({
+            url:"./group/create_group.php",
+            data:{n:group_name},
+            type:'POST',
+            success:function(response) {
+                var resp = $.trim(response);
+            }
+        });
+
+        reloadGroups();
+    }
+
+};
 
 
 
