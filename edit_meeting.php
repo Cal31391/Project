@@ -9,8 +9,16 @@ if(session_id() == '' || !isset($_SESSION)) {
     header("location:index.php");
 }
 else {
-    $meeting_name = "(Meeting Name)";
+
     include("config/db_connect.php");
+
+    $meeting_name = $_SESSION['meeting_name'];
+    //$location = $_SESSION['location'];
+    $notes = $_SESSION['notes'];
+    $group_name = $_SESSION['group_name'];
+    $sTime = $_SESSION['sTime'];
+    $eTime = $_SESSION['eTime'];
+    $day = $_SESSION['day'];
 }
 ?>
 
@@ -47,15 +55,15 @@ else {
             <div class="row first-row" align="center">
                 <div class="col-md-offset-4 col-md-4">
                     <div class="title">
-                        <h1 id="meeting-name" name="meeting-name"><?php echo $meeting_name; ?></h1>
+                        <h1 id="meeting-name-edit" name="meeting-name-edit"><?php echo $meeting_name;?></h1>
                     </div>
                     <div class="link">
                         <div class="edit-name">
-                            <a data-toggle="modal" class="clickable" data-target="#edit-name-modal">Change</a>
+                            <a data-toggle="modal" class="clickable" data-target="#edit-name-modal-edit">Change</a>
                         </div>
                     </div>
                     <!--EDIT NAME MODAL-->
-                    <div class="modal fade" id="edit-name-modal" role="dialog">
+                    <div class="modal fade" id="edit-name-modal-edit" role="dialog">
                         <div class="modal-dialog modal-sm">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -64,9 +72,9 @@ else {
                                 <div class="modal-body">
                                     <!--use ajax here?-->
                                         <div class="form-group">
-                                            <label for="meeting-name">Enter Meeting Name</label>
-                                            <input type="text" class="form-control" id="new-meeting-name" name="new-meeting-name">
-                                            <button type="button" class="btn btn-default" onclick="changeName()" data-dismiss="modal">Submit</button>
+                                            <label for="meeting-name-edit">Enter Meeting Name</label>
+                                            <input type="text" class="form-control" id="new-meeting-name-edit" name="new-meeting-name-edit">
+                                            <button type="button" class="btn btn-default" onclick="changeNameEdit()" data-dismiss="modal">Submit</button>
                                         </div>
 
                                 </div>
@@ -87,19 +95,21 @@ else {
             <div class="row second-row">
                 <!--GROUP INFO, DATES, MAP-->
                 <div class="col-md-offset-1 col-md-3 second-row-col-1-meeting">
-                        <select class="form-control" id="group-names" name="group-names">
+                        <select class="form-control" id="group-edit-names" name="group-edit-names">
                             <?php
+                            $group_name = $_SESSION['group_name'];
                             $stmt = $conn->prepare("SELECT * FROM groups");
                             $stmt->execute();
                             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             $count = $stmt->rowCount();
-                            echo "<option value='" . 0 . "'>" . "(Select Group)" . "</option>";
+                            echo "<option value='" . 0 . "'>" . $group_name . "</option>";
                             if ($count > 0) {
                                 for($i=0; $i<$count; $i++) {
                                     $row = $rows[$i];
                                     echo "<option value='" . $row["name"] . "'>" . $row['name'] . "</option>";
                                 }
                             }
+
                             ?>
                         </select>
                     <div class="link">
@@ -109,32 +119,49 @@ else {
                     </div>
                     <br>
                     <div class="group-box-elements">
-                        <div class="group-box-meeting" id="group-members" name="group-members">
-                        </div>
-                        <div class="select-buttons">
-                            <button type="button" class="btn" onclick="selectAll()">Select All</button>
-                            <button type="button" class="btn" onclick="unselectAll()">Unselect All</button>
+                        <div class="group-box-meeting" id="group-edit-members" name="group-edit-members">
+                            <?php
+                            $stmt = $conn->prepare("SELECT u.username, g.name
+                            FROM user_group ug
+                            inner join users u on u.id = ug.user_id
+                            inner join groups g on g.id = ug.group_id
+                            where g.name = '$group_name'");
+                            $stmt->execute();
+                            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                            $count = $stmt->rowCount();
+
+
+                            if ($count > 0) {
+                                for($i=0; $i<$count; $i++) {
+                                    $row = $rows[$i];
+                                    echo "<li class='list-group-item list-group-item-action'>".$row["username"]."</li>";
+                                }
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 second-row-col-2">
                     <div class="start-date-dropdown">
                         <div class="form-group">
-                            <label for='datetimepicker1'>From: </label>
-                            <input type="text" id="datepicker1">                          
+                            <label for='datetimepicker'>Date: </label>
+                            <input type="text" class="datepicker" id="datepicker-edit" value="<?php echo $day; ?>">
                         </div>
                     </div>
-                    <div class="end-date-dropdown">
-                        <div class="form-group">
-                            <label for='datetimepicker2'>To: </label>
-                            <input type="text" id="datepicker2">
-                        </div>
+
+                    <div class="time">
+                        <label for="time1">From: </label>
+                        <input type="text" id="time1-edit" class="time ui-timepicker-input" autocomplete="off" value="<?php echo $sTime; ?>">
+                    </div>
+                    <div class="time">
+                        <label for="time2">To: </label>
+                        <input type="text" id="time2-edit" class="time ui-timepicker-input" autocomplete="off"value="<?php echo $eTime; ?>">
                     </div>
                     <!--datepickers from: https://codepen.io/milz/pen/xbXpWw-->
                     <div class="notes-board">
                         <div class="form-group">
                             <label for="notes">Notes:</label>
-                            <textarea class="form-control" rows="5" id="notes"></textarea>
+                            <textarea class="form-control" rows="5" id="notes-edit"><?php echo $notes; ?></textarea>
                         </div>
                     </div>
                 </div>
@@ -150,7 +177,7 @@ else {
             <div class="row third-row">
                 <div class="col-md-offset-4 col-md-4 third-row-col-1">
                     <button type="button" class="btn" onclick="clearAll()">Clear</button>
-                    <button type="button" class="btn" onclick="saveMeeting()">Save</button>
+                    <button type="button" class="btn" onclick="updateMeeting()">Save</button>
                     <span class="popuptext" id="confirmSaved">Saved!</span>
                 </div>
             </div>

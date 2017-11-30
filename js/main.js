@@ -32,7 +32,7 @@ $(document).ready(function() {
 
     $("#group-names-edit").change(function() {
         var name_id = $(this).val();
-        console.log(name_id);
+
         if(name_id != "" && name_id != 1) {
             $.ajax({
                 url:"./group/load_edit_group.php",
@@ -41,6 +41,16 @@ $(document).ready(function() {
                 success:function(response) {
                     var resp = $.trim(response);
                     $("#member-names").html(resp);
+                }
+            });
+
+            $.ajax({
+                url:"./meeting/load_edit_group_meetings.php",
+                data:{n_id:name_id},
+                type:'POST',
+                success:function(response) {
+                    var resp = $.trim(response);
+                    $("#meeting-links").html(resp);
                 }
             });
         }
@@ -109,6 +119,85 @@ var addName = function() {
     }
 };
 
+var loadEditMeeting = function() {
+    var m = $("#meeting-name-header").text();
+    console.log(m);
+    if(m != "") {
+        $.ajax({
+            url:"./meeting/load_meeting_details.php",
+            data:{n:m},
+            type:'POST',
+            success:function(response) {
+                window.location.assign('./edit_meeting.php');
+                //alert(response);
+                var resp = $.trim(response);
+            }
+        });
+    }
+};
+
+var getMeetingDetails = function(i) {
+    var m = $("#meeting-name-link"+i).text();
+    console.log(m);
+    if(m != "") {
+        $.ajax({
+            url:"./meeting/load_meeting_details.php",
+            data:{n:m},
+            type:'POST',
+            success:function(response) {
+                window.location.assign('./meeting_info.php');
+                //alert(response);
+                var resp = $.trim(response);
+            }
+        });
+    }
+};
+
+var getMeetingDetailsForEditGroups = function(i) {
+    var bad_name = $("#name"+i).text();
+    var m = bad_name.substr(0, bad_name.length-8);
+    console.log(m);
+    if(m != "") {
+        $.ajax({
+            url:"./meeting/load_meeting_details.php",
+            data:{n:m},
+            type:'POST',
+            success:function(response) {
+                window.location.assign('./meeting_info.php');
+                var resp = $.trim(response);
+            }
+        });
+    }
+};
+
+var updateMeeting = function() {
+    var popup = $("#confirmSaved");
+
+    var name = $("#meeting-name-edit").text();
+    //var location = $("").val();
+    var date = $("#datepicker-edit").val();
+    var startTime = $("#time1-edit").val();
+    var endTime = $("#time2-edit").val();
+    var notes = $("#notes-edit").val();
+    var group_name = $("#group-edit-names :selected").text();
+    var user = username;
+
+    console.log(name);
+    if(name != "") {
+        $.ajax({
+            url:"./meeting/update_meeting.php",
+            data:{n:name, d:date, sT:startTime, eT:endTime, notes:notes, g_n:group_name, u:user},
+            type:'POST',
+            success:function(response) {
+                var resp = $.trim(response);
+            }
+        });
+
+        $(popup).css({ display: "block" });
+        $(popup).delay(2000).fadeOut(450);
+    }
+};
+
 var saveMeeting = function() {
     var popup = $("#confirmSaved");
 
@@ -119,13 +208,15 @@ var saveMeeting = function() {
     var endTime = $("#time2").val();
     var notes = $("#notes").val();
     var group_name = $("#group-names").val();
+    var user = username;
 
     if(name != "") {
         $.ajax({
             url:"./meeting/create_meeting.php",
-            data:{n:name, d:date, sT:startTime, eT:endTime, notes:notes, g_n:group_name},
+            data:{n:name, d:date, sT:startTime, eT:endTime, notes:notes, g_n:group_name, u:user},
             type:'POST',
             success:function(response) {
+                alert(response);
                 var resp = $.trim(response);
             }
         });
@@ -256,6 +347,11 @@ function formSubmit(element) {
 var changeName = function() {
     var text = document.getElementById("new-meeting-name").value;
     document.getElementById("meeting-name").innerHTML = text;
+};
+
+var changeNameEdit = function() {
+    var text = document.getElementById("new-meeting-name-edit").value;
+    document.getElementById("meeting-name-edit").innerHTML = text;
 };
 
 var changeGroupName = function() {

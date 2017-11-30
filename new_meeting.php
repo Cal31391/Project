@@ -11,6 +11,7 @@ if(session_id() == '' || !isset($_SESSION)) {
 else {
     $meeting_name = "(Meeting Name)";
     include("config/db_connect.php");
+    $user = $_SESSION['username'];
 }
 ?>
 
@@ -31,7 +32,7 @@ else {
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="dashboard.php">Dashboard</a></li>
-                    <li><a href="group/edit_groups.php">Groups</a></li>
+                    <li><a href="edit_groups.php">Groups</a></li>
                     <li><a href="help.php">Help</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -104,7 +105,7 @@ else {
                 </select>
                 <div class="link">
                     <div class="edit-groups">
-                        <a href="group/edit_groups.php">Edit Groups</a>
+                        <a href="edit_groups.php">Edit Groups</a>
                     </div>
                 </div>
                 <br>

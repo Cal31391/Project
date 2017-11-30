@@ -10,6 +10,8 @@ if(session_id() == '' || !isset($_SESSION)) {
 }
 else {
     $user = $_SESSION['username'];
+    $id = $_SESSION['id'];
+    include("config/db_connect.php");
 }
 ?>
 
@@ -74,11 +76,37 @@ else {
                     <!--MEETING SCHEDULE STUFF-->
                     <div class="col-md-2">
                         <h4 class="schedule">Scheduled Meetings</h4>
-                        <div class="list" align="center">
-                            <a href="meeting_info.php">meeting name (day,time)</a>
-                            <br>
-                            <a href="meeting_info.php">meeting name (day,time)</a>
-                            <br>
+                        <div class="list" id="list" align="center">
+                            <?php
+                            $user_id = $id;
+
+                            $stmt = $conn->prepare("SELECT m.id FROM meetings m 
+                            INNER JOIN groups g on m.group_name=g.name
+                            INNER JOIN user_group ug on ug.group_id=g.id
+                            INNER JOIN users u on ug.user_id=u.id
+                            WHERE u.id = $user_id");
+                            $stmt->execute();
+                            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                            $meeting_count = $stmt->rowCount();
+
+                            $meeting_name = "";
+                            $i = 0;
+                            if ($meeting_count > 0) {
+                                foreach($rows as $row) {
+                                    //$row = $rows[$i];
+                                    $meeting_id = $row['id'];
+
+                                    $stmt = $conn->prepare("SELECT name FROM meetings WHERE id = $meeting_id");
+                                    $stmt->execute();
+                                    $rows = $stmt->fetch(PDO::FETCH_ASSOC);
+                                    $meeting_name = $rows['name'];
+                                    //$escapedUrl = htmlspecialchars(json_encode($meeting_name));
+
+                                    echo "<a class='clickable' id='meeting-name-link$i' onclick='getMeetingDetails($i)'>$meeting_name</a><br>";
+                                    $i++;
+                                }
+                            }
+                            ?>
                         </div>
                         <br>
                         <div class="new-meeting-link">

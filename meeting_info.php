@@ -3,7 +3,28 @@
   - Project
   - Meeting Info
 -->
-<?php require 'header.php' ?>
+<?php require 'header.php';
+
+session_start();
+if(session_id() == '' || !isset($_SESSION)) {
+    header("location:index.php");
+}
+else {
+    $user = $_SESSION['username'];
+    $id = $_SESSION['id'];
+    include("config/db_connect.php");
+
+
+    $meeting_name = $_SESSION['meeting_name'];
+    //$location = $_SESSION['location'];
+    $notes = $_SESSION['notes'];
+    $group_name = $_SESSION['group_name'];
+    $sTime = $_SESSION['sTime'];
+    $eTime = $_SESSION['eTime'];
+    $day = $_SESSION['day'];
+}
+
+?>
 
 <body>
     <div class='page-wrapper'>
@@ -38,8 +59,8 @@
             <div class="row first-row" align="center">
                 <div class="col-md-offset-4 col-md-4">
                     <div class="title">
-                        <h1>Meeting Name</h1>
-                        <a href="" id="edit_meeting">Edit Meeting</a>
+                        <h1 id="meeting-name-header"><?php echo $meeting_name; ?></h1>
+                        <a class="clickable" onclick='loadEditMeeting()' id="edit_meeting">Edit Meeting</a>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -54,19 +75,32 @@
             <!--SECOND ROW-->
             <div class="col-md-4 group-module">
                 <div class="group-box"><!--make dynamic-->
-                    <h4 class="group-name">Group Name</h4>
-                    <li class="list-group-item list-group-item">Group member 1</li>
-                    <li class="list-group-item list-group-item">Group member 2</li>
-                    <li class="list-group-item list-group-item">Group member 3</li>
-                    <li class="list-group-item list-group-item">Group member 4</li>
-                    <li class="list-group-item list-group-item">Group member 5</li>
+                    <h4 class="group-name"><?php echo $group_name; ?></h4>
+                    <?php
+                    $stmt = $conn->prepare("SELECT u.username, g.name
+                    FROM user_group ug
+                    inner join users u on u.id = ug.user_id
+                    inner join groups g on g.id = ug.group_id
+                    where g.name = '$group_name'");
+                    $stmt->execute();
+                    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    $count = $stmt->rowCount();
+
+
+                    if ($count > 0) {
+                        for($i=0; $i<$count; $i++) {
+                        $row = $rows[$i];
+                        echo "<li class='list-group-item list-group-item'>".$row["username"]."</li>";
+                        }
+                    }
+                    ?>
                 </div>
             </div>
             <div class="col-md-4 meeting-calendar">
                 <!--CALENDAR STUFF-->
-                <div class="googleCalendar">
-                    <h4 class="meeting-time">7:00pm-11:00pm</h4>
-                    <iframe src="https://calendar.google.com/calendar/embed?title=Put%20your%20Title%20here&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=8d3fc8l9g04n7r9im45fsn08ak%40group.calendar.google.com&amp;color=%238D6F47&amp;ctz=America%2FNew_York" width=310 height=300 frameborder="0" scrolling="no"></iframe>
+                <div class="date" id="day-time">
+                    <h4 class="meeting-time"><?php echo $day; ?></h4>
+                    <h4 class="meeting-time"><?php echo $sTime.' to '.$eTime; ?></h4>
                 </div>
                 <!--Calendar from: https://codepen.io/profstein/pen/ozrbPJ-->
             </div>
@@ -78,7 +112,7 @@
             </div>
         </div>
         <div class="row notes">
-            <button class="meeting-notes" role="tooltip" data-toggle="popover" data-content="Notes about the meeting... anything that the user needs to know">Meeting Notes</button>
+            <button class="meeting-notes" role="tooltip" data-toggle="popover" data-content=<?php echo $notes; ?>>Meeting Notes</button>
         </div>
     </div>
 <script>//placeholder//

@@ -27,17 +27,17 @@ else {
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="../dashboard.php">Field Trip</a>
+                    <a class="navbar-brand" href="./dashboard.php">Field Trip</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="../dashboard.php">Dashboard</a></li>
+                        <li><a href="./dashboard.php">Dashboard</a></li>
                         <li class="active"><a href="#">Groups</a></li>
-                        <li><a href="../help.php">Help</a></li>
+                        <li><a href="./help.php">Help</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="../account_settings.php">Account</a></li>
-                        <li><a href="../logout.php">Logout</a></li>
+                        <li><a href="./account_settings.php">Account</a></li>
+                        <li><a href="./logout.php">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -53,7 +53,7 @@ else {
                 </div>
                 <div class="col-md-4">
                     <div class="logo">
-                        <img src="../images/Logo.png" alt="logo" class="img-thumbnail" width="100px" height="100px">
+                        <img src="./images/Logo.png" alt="logo" class="img-thumbnail" width="100px" height="100px">
                     </div>
                 </div>
             </div>
@@ -91,7 +91,7 @@ else {
                 <div class="row group-info">
                     <div class="col-md-4 module-title">
                         <div class="group-image">
-                            <img src="../images/placeholder.png" alt="coffee" class="img-thumbnail" width="200px" height="150px">
+                            <img src="./images/placeholder.png" alt="coffee" class="img-thumbnail" width="200px" height="150px">
                             <!--https://media.timeout.com/images/100893385/image.jpg-->
                         </div>
                     </div>
@@ -118,10 +118,7 @@ else {
                     </div>
                     <div class="col-md-3 meetings-module ">
                         <h5 class="meetings ">Meetings</h5>
-                        <ul style="list-style-type: none " class="meeting-links ">
-                            <li id="name ">Meeting 1 (day/time)<a href="# " class="link ">Info</a><a href="# " class="link ">Edit</a></li>
-                            <li id="name ">Meeting 2 (day/time)<a href="# " class="link ">Info</a><a href="# " class="link ">Edit</a></li>
-                            <li id="name ">Meeting 3 (day/time)<a href="# " class="link ">Info</a><a href="# " class="link ">Edit</a></li>
+                        <ul style="list-style-type: none " class="meeting-links" id="meeting-links">
                         </ul>
                     </div>
                 </div>

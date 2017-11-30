@@ -380,6 +380,10 @@ footer {
     font-weight: bold;
 }
 
+#day-time {
+    padding-top: 60px;
+}
+
 .location {
     text-align: center;
     font-weight: bold;
