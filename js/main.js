@@ -137,7 +137,8 @@ var loadEditMeeting = function() {
 };
 
 var getMeetingDetails = function(i) {
-    var m = $("#meeting-name-link"+i).text();
+    var bad_name = $("#meeting-name-link"+i).text();
+    var m = bad_name.split(',', 1)[0];
     console.log(m);
     if(m != "") {
         $.ajax({
@@ -155,7 +156,7 @@ var getMeetingDetails = function(i) {
 
 var getMeetingDetailsForEditGroups = function(i) {
     var bad_name = $("#name"+i).text();
-    var m = bad_name.substr(0, bad_name.length-8);
+    var m = bad_name.split(',', 1)[0];
     console.log(m);
     if(m != "") {
         $.ajax({

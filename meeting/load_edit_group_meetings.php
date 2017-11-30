@@ -11,18 +11,20 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $meeting_count = $stmt->rowCount();
 
 $meeting_name = "";
+$meeting_day = "";
 $i = 0;
 if ($meeting_count > 0) {
     foreach($rows as $row) {
         //$row = $rows[$i];
         $meeting_id = $row['id'];
 
-        $stmt = $conn->prepare("SELECT name FROM meetings WHERE id = $meeting_id");
+        $stmt = $conn->prepare("SELECT name, day FROM meetings WHERE id = $meeting_id");
         $stmt->execute();
         $rows = $stmt->fetch(PDO::FETCH_ASSOC);
         $meeting_name = $rows['name'];
+        $meeting_day = $rows['day'];
 
-        echo "<li id='name$i'>$meeting_name<a onclick='getMeetingDetailsForEditGroups($i)' class='link' style='cursor: pointer'>Info</a><a href='' class='link'>Edit</a></li>";
+        echo "<li id='name$i'>$meeting_name, $meeting_day<a onclick='getMeetingDetailsForEditGroups($i)' class='link' style='cursor: pointer'>Info</a></li>";
         $i++;
     }
 }

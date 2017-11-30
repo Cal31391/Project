@@ -5,15 +5,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard.php" afterPath="$PROJECT_DIR$/dashboard.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/edit_groups.php" afterPath="$PROJECT_DIR$/edit_groups.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/edit_meeting.php" afterPath="$PROJECT_DIR$/edit_meeting.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/footer.php" afterPath="$PROJECT_DIR$/footer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.php" afterPath="$PROJECT_DIR$/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meeting/create_meeting.php" afterPath="$PROJECT_DIR$/meeting/create_meeting.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meeting/update_meeting.php" afterPath="$PROJECT_DIR$/meeting/update_meeting.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meeting_info.php" afterPath="$PROJECT_DIR$/meeting_info.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_meeting.php" afterPath="$PROJECT_DIR$/new_meeting.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meeting/load_edit_group_meetings.php" afterPath="$PROJECT_DIR$/meeting/load_edit_group_meetings.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -63,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="165" column="61" lean-forward="false" selection-start-line="165" selection-start-column="61" selection-end-line="165" selection-end-column="61" />
+            <state relative-caret-position="90">
+              <caret line="140" column="38" lean-forward="false" selection-start-line="140" selection-start-column="38" selection-end-line="140" selection-end-column="38" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -79,13 +72,13 @@
         <entry file="file://$PROJECT_DIR$/meeting/load_edit_group_meetings.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
-              <caret line="24" column="126" lean-forward="false" selection-start-line="24" selection-start-column="126" selection-end-line="24" selection-end-column="126" />
+              <caret line="24" column="36" lean-forward="true" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
               <folding>
-                <marker date="1512071374428" expanded="true" signature="101:188" ph="SELECT m.id meetings" />
-                <marker date="1512071374428" expanded="true" signature="101:189" ph="SELECT m.id meetings" />
-                <marker date="1512071374428" expanded="true" signature="101:201" ph="SELECT m.id meetings" />
-                <marker date="1512071374428" expanded="true" signature="481:518" ph="SELECT name meetings" />
-                <marker date="1512071374428" expanded="true" signature="758:773" ph="..." />
+                <marker date="1512072780323" expanded="true" signature="101:188" ph="SELECT m.id meetings" />
+                <marker date="1512072780323" expanded="true" signature="101:189" ph="SELECT m.id meetings" />
+                <marker date="1512072780323" expanded="true" signature="101:201" ph="SELECT m.id meetings" />
+                <marker date="1512072780323" expanded="true" signature="500:542" ph="SELECT name,... " />
+                <marker date="1512072780323" expanded="true" signature="833:848" ph="..." />
               </folding>
             </state>
           </provider>
@@ -104,18 +97,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dashboard.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="95" column="55" lean-forward="true" selection-start-line="95" selection-start-column="55" selection-end-line="95" selection-end-column="55" />
+            <state relative-caret-position="464">
+              <caret line="125" column="52" lean-forward="false" selection-start-line="125" selection-start-column="52" selection-end-line="125" selection-end-column="52" />
               <folding>
-                <marker date="1512067976442" expanded="true" signature="306:322" ph="..." />
-                <marker date="1512067976442" expanded="true" signature="3479:3486" ph="SELECT meeti... user_meeting" />
-                <marker date="1512067976442" expanded="true" signature="3479:3758" ph="SELECT m.id meetings" />
-                <marker date="1512067976442" expanded="true" signature="3479:3759" ph="SELECT m.id meetings" />
-                <marker date="1512067976442" expanded="true" signature="4327:4364" ph="SELECT name meetings" />
+                <marker date="1512075786534" expanded="true" signature="306:322" ph="..." />
+                <marker date="1512075786534" expanded="true" signature="3526:3533" ph="SELECT meeti... user_meeting" />
+                <marker date="1512075786534" expanded="true" signature="3526:3805" ph="SELECT m.id meetings" />
+                <marker date="1512075786534" expanded="true" signature="3526:3806" ph="SELECT m.id meetings" />
+                <marker date="1512075786534" expanded="true" signature="4421:4556" ph="SELECT name meetings" />
+                <marker date="1512075786534" expanded="true" signature="5157:5190" ph="..." />
+                <marker date="1512075786534" expanded="true" signature="5191:5299" ph="..." />
+                <marker date="1512075786534" expanded="true" signature="5191:5316" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="158" column="19" lean-forward="false" selection-start-line="158" selection-start-column="19" selection-end-line="158" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -127,6 +133,7 @@
       <find>group-selector</find>
       <find>mem-name-box</find>
       <find>save</find>
+      <find>account-</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -162,16 +169,16 @@
         <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/new_meeting.php" />
         <option value="$PROJECT_DIR$/meeting/load_meeting_details.php" />
-        <option value="$PROJECT_DIR$/css/main.css" />
         <option value="$PROJECT_DIR$/meeting_info.php" />
         <option value="$PROJECT_DIR$/edit_meeting.php" />
         <option value="$PROJECT_DIR$/meeting/update_meeting.php" />
         <option value="$PROJECT_DIR$/meeting/create_meeting.php" />
-        <option value="$PROJECT_DIR$/dashboard.php" />
         <option value="$PROJECT_DIR$/footer.php" />
         <option value="$PROJECT_DIR$/edit_groups.php" />
         <option value="$PROJECT_DIR$/meeting/load_edit_group_meetings.php" />
         <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/css/main.css" />
+        <option value="$PROJECT_DIR$/dashboard.php" />
       </list>
     </option>
   </component>
@@ -275,18 +282,18 @@
       <option name="presentableId" value="Default" />
       <updated>1510164818501</updated>
       <workItem from="1510164831778" duration="60270000" />
-      <workItem from="1511192065235" duration="89823000" />
+      <workItem from="1511192065235" duration="93424000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150093000" />
+    <option name="totallyTimeSpent" value="153694000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10175695" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10175695" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -537,14 +544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="383" column="18" lean-forward="false" selection-start-line="383" selection-start-column="18" selection-end-line="383" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/group/load_group.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -704,20 +703,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meeting/load_edit_group_meetings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="126" lean-forward="false" selection-start-line="24" selection-start-column="126" selection-end-line="24" selection-end-column="126" />
-          <folding>
-            <marker date="1512071374428" expanded="true" signature="101:188" ph="SELECT m.id meetings" />
-            <marker date="1512071374428" expanded="true" signature="101:189" ph="SELECT m.id meetings" />
-            <marker date="1512071374428" expanded="true" signature="101:201" ph="SELECT m.id meetings" />
-            <marker date="1512071374428" expanded="true" signature="481:518" ph="SELECT name meetings" />
-            <marker date="1512071374428" expanded="true" signature="758:773" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/meeting/load_meeting_details.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -751,26 +736,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard.php">
+    <entry file="file://$PROJECT_DIR$/meeting/load_edit_group_meetings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="95" column="55" lean-forward="true" selection-start-line="95" selection-start-column="55" selection-end-line="95" selection-end-column="55" />
+        <state relative-caret-position="408">
+          <caret line="24" column="36" lean-forward="true" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
           <folding>
-            <marker date="1512067976442" expanded="true" signature="306:322" ph="..." />
-            <marker date="1512067976442" expanded="true" signature="3479:3486" ph="SELECT meeti... user_meeting" />
-            <marker date="1512067976442" expanded="true" signature="3479:3758" ph="SELECT m.id meetings" />
-            <marker date="1512067976442" expanded="true" signature="3479:3759" ph="SELECT m.id meetings" />
-            <marker date="1512067976442" expanded="true" signature="4327:4364" ph="SELECT name meetings" />
+            <marker date="1512072780323" expanded="true" signature="101:188" ph="SELECT m.id meetings" />
+            <marker date="1512072780323" expanded="true" signature="101:189" ph="SELECT m.id meetings" />
+            <marker date="1512072780323" expanded="true" signature="101:201" ph="SELECT m.id meetings" />
+            <marker date="1512072780323" expanded="true" signature="500:542" ph="SELECT name,... " />
+            <marker date="1512072780323" expanded="true" signature="833:848" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="165" column="61" lean-forward="false" selection-start-line="165" selection-start-column="61" selection-end-line="165" selection-end-column="61" />
+        <state relative-caret-position="90">
+          <caret line="140" column="38" lean-forward="false" selection-start-line="140" selection-start-column="38" selection-end-line="140" selection-end-column="38" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="158" column="19" lean-forward="false" selection-start-line="158" selection-start-column="19" selection-end-line="158" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="125" column="52" lean-forward="false" selection-start-line="125" selection-start-column="52" selection-end-line="125" selection-end-column="52" />
+          <folding>
+            <marker date="1512075786534" expanded="true" signature="306:322" ph="..." />
+            <marker date="1512075786534" expanded="true" signature="3526:3533" ph="SELECT meeti... user_meeting" />
+            <marker date="1512075786534" expanded="true" signature="3526:3805" ph="SELECT m.id meetings" />
+            <marker date="1512075786534" expanded="true" signature="3526:3806" ph="SELECT m.id meetings" />
+            <marker date="1512075786534" expanded="true" signature="4421:4556" ph="SELECT name meetings" />
+            <marker date="1512075786534" expanded="true" signature="5157:5190" ph="..." />
+            <marker date="1512075786534" expanded="true" signature="5191:5299" ph="..." />
+            <marker date="1512075786534" expanded="true" signature="5191:5316" ph="..." />
           </folding>
         </state>
       </provider>

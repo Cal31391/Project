@@ -21,7 +21,8 @@ else {
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                            aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -62,7 +63,7 @@ else {
                 <!--EVERYTHING ELSE-->
                 <div class="row vertical-align account-elements">
                     <!--ACCOUNT ELEMENTS-->
-                    <div class="col-md-offset-2 col-md-3 account">
+                    <div class="col-md-offset-1 col-md-3 account">
                         <div class="user">
                             <img src="./images/Profile-Placeholder.png" alt="placeholder" class="img-thumbnail" width="100px" height="100px">
                         </div>
@@ -74,7 +75,7 @@ else {
                         </div>
                     </div>
                     <!--MEETING SCHEDULE STUFF-->
-                    <div class="col-md-2">
+                    <div class="col-md-3 scheduled-meetings">
                         <h4 class="schedule">Scheduled Meetings</h4>
                         <div class="list" id="list" align="center">
                             <?php
@@ -90,19 +91,25 @@ else {
                             $meeting_count = $stmt->rowCount();
 
                             $meeting_name = "";
+                            $meeting_day = "";
                             $i = 0;
                             if ($meeting_count > 0) {
                                 foreach($rows as $row) {
                                     //$row = $rows[$i];
                                     $meeting_id = $row['id'];
 
-                                    $stmt = $conn->prepare("SELECT name FROM meetings WHERE id = $meeting_id");
+                                    $stmt = $conn->prepare("SELECT name, day, start_time, end_time FROM meetings 
+                                                                      WHERE id = $meeting_id");
                                     $stmt->execute();
                                     $rows = $stmt->fetch(PDO::FETCH_ASSOC);
                                     $meeting_name = $rows['name'];
+                                    $meeting_day = $rows['day'];
+                                    $sTime = $rows['start_time'];
+                                    $eTime = $rows['end_time'];
                                     //$escapedUrl = htmlspecialchars(json_encode($meeting_name));
 
-                                    echo "<a class='clickable' id='meeting-name-link$i' onclick='getMeetingDetails($i)'>$meeting_name</a><br>";
+                                    echo "<a class='clickable' id='meeting-name-link$i' style='display: inline-block; margin: 2%' 
+                                            onclick='getMeetingDetails($i)'>$meeting_name, $meeting_day<br>$sTime-$eTime</a><br>";
                                     $i++;
                                 }
                             }
@@ -113,12 +120,11 @@ else {
                             <a href="new_meeting.php">New Meeting</a>
                         </div>
                     </div>
-                    <!--CALENDAR STUFF-->
-                    <div class="col-md-4 calendar-container" align="center">
-                        <div class="googleCalendar">
-                            <iframe src="https://calendar.google.com/calendar/embed?title=Put%20your%20Title%20here&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=8d3fc8l9g04n7r9im45fsn08ak%40group.calendar.google.com&amp;color=%238D6F47&amp;ctz=America%2FNew_York" width=310 height=300 frameborder="0" scrolling="no"></iframe>
+                    <!--GROUPS STUFF-->
+                    <div class="col-md-3 your-groups">
+                        <h4 class="schedule">Your Groups</h4>
+                        <div class="list" id="group-list" align="center">
                         </div>
-                        <!--Calendar from: https://codepen.io/profstein/pen/ozrbPJ-->
                     </div>
                 </div>
             </div>
