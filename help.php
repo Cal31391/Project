@@ -3,7 +3,17 @@
   - Project
   - Help Screen
 -->
-<?php require 'header.php' ?>
+<?php require 'header.php';
+
+session_start();
+if(session_id() == '' || !isset($_SESSION)) {
+    header("location:index.php");
+}
+else {
+    include("config/db_connect.php");
+    $user = $_SESSION['username'];
+}
+?>
 
 <body>
     <nav class="navbar navbar-default navbar-static-top">
@@ -15,36 +25,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="dashboard.php">Field Trip</a>
+                <a class="navbar-brand" href="./dashboard.php">Field Trip</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="./">Home</a></li>
+                    <li><a href="./dashboard.php">Dashboard</a></li>
+                    <li><a href="./edit_groups.php">Groups</a></li>
                     <li class="active"><a href="#">Help</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <div class="dropdown login-dropdown">
-                        <button class="btn btn-secondary navbar-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Login
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <form action="/db_connect.php">
-                                <div class="form-group login-portal">
-                                    <label for="username">Username:</label>
-                                    <input type="username" class="form-control" id="username">
-                                    <label for="username">Password:</label>
-                                    <input type="password" class="form-control" id="password">
-                                    <div class="forgot-password">
-                                        <a data-toggle="modal" class="clickable" data-target="#password-modal">Forgot Password?</a>
-                                    </div>
-                                    <div class="login-submit-btn">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
-                                        <!--Add dialog after submit-->
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                    <li><a href="./account_settings.php">Account</a></li>
+                    <li><a href="./logout.php">Logout</a></li>
                 </ul>
             </div>
         </div>

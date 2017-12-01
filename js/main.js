@@ -1,13 +1,7 @@
-/*$(document).ready(function() {
-    $('[data-toggle="popover"]').popover();
-    $("#input-b5").fileinput({ showCaption: false });
-});*/
-
-
 $(document).ready(function() {
 
-    var list_group_item = $(".list-group-item-action");
 
+    var list_group_item = $(".list-group-item-action");
 
 
     $(function () {
@@ -25,6 +19,21 @@ $(document).ready(function() {
                 success:function(response) {
                     var resp = $.trim(response);
                     $("#group-members").html(resp);
+                }
+            });
+        }
+    });
+
+    $("#meeting-edit-group-names").change(function() {
+        var name_id = $(this).val();
+        if(name_id != "") {
+            $.ajax({
+                url:"./meeting/meeting-edit-load-group-names.php",
+                data:{n_id:name_id},
+                type:'POST',
+                success:function(response) {
+                    var resp = $.trim(response);
+                    $("#group-edit-members").html(resp);
                 }
             });
         }
@@ -361,6 +370,7 @@ var changeGroupName = function() {
     saveGroup(text, old_name);
 };
 
+
 var validateFields = function() {
     var username_err = $("#usernameWarn");
     var username = $("#username");
@@ -415,8 +425,5 @@ var validateRegFields = function() {
         return true;
     }
 };
-
-
-
 
 

@@ -71,7 +71,7 @@ else {
                         <br>
                         <p id="username">Username: <?php echo $user; ?></p>
                         <div class="link">
-                            <a href="account_settings.php">Account Settings</a>
+                            <button type="button" class="btn btn-primary" onclick="location.href = './account_settings.php'">Account Settings</button>
                         </div>
                     </div>
                     <!--MEETING SCHEDULE STUFF-->
@@ -117,14 +117,32 @@ else {
                         </div>
                         <br>
                         <div class="new-meeting-link">
-                            <a href="new_meeting.php">New Meeting</a>
+                            <button type="button" class="btn btn-primary" onclick="location.href = './new_meeting.php'">New Meeting</button>
                         </div>
                     </div>
                     <!--GROUPS STUFF-->
                     <div class="col-md-3 your-groups">
                         <h4 class="schedule">Your Groups</h4>
                         <div class="list" id="group-list" align="center">
+                            <?php
+                            $user_name = $user;
+                            $stmt = $conn->prepare("SELECT g.name FROM groups g
+                                                              INNER JOIN user_group ug on ug.group_id=g.id
+                                                              INNER JOIN users u on u.id=ug.user_id
+                                                              WHERE u.username='$user'");
+                            $stmt->execute();
+                            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                            $count = $stmt->rowCount();
+
+                            if ($count > 0) {
+                                for($i=0; $i<$count; $i++) {
+                                    $row = $rows[$i];
+                                    echo "<li class='list-group-item list-group-item'>".$row["name"]."</li>";
+                                }
+                            }
+                            ?>
                         </div>
+                        <button type="button" class="btn btn-primary" onclick="location.href = './edit_groups.php'">Edit Groups</button>
                     </div>
                 </div>
             </div>

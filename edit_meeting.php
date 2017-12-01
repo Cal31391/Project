@@ -95,7 +95,7 @@ else {
             <div class="row second-row">
                 <!--GROUP INFO, DATES, MAP-->
                 <div class="col-md-offset-1 col-md-3 second-row-col-1-meeting">
-                        <select class="form-control" id="group-edit-names" name="group-edit-names">
+                        <select class="form-control" id="meeting-edit-group-names" name="meeting-edit-group-names">
                             <?php
                             $group_name = $_SESSION['group_name'];
                             $stmt = $conn->prepare("SELECT * FROM groups");
@@ -109,7 +109,6 @@ else {
                                     echo "<option value='" . $row["name"] . "'>" . $row['name'] . "</option>";
                                 }
                             }
-
                             ?>
                         </select>
                     <div class="link">
@@ -122,10 +121,10 @@ else {
                         <div class="group-box-meeting" id="group-edit-members" name="group-edit-members">
                             <?php
                             $stmt = $conn->prepare("SELECT u.username, g.name
-                            FROM user_group ug
-                            inner join users u on u.id = ug.user_id
-                            inner join groups g on g.id = ug.group_id
-                            where g.name = '$group_name'");
+                                                              FROM user_group ug
+                                                              inner join users u on u.id = ug.user_id
+                                                              inner join groups g on g.id = ug.group_id
+                                                              where g.name = '$group_name'");
                             $stmt->execute();
                             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             $count = $stmt->rowCount();
@@ -134,7 +133,7 @@ else {
                             if ($count > 0) {
                                 for($i=0; $i<$count; $i++) {
                                     $row = $rows[$i];
-                                    echo "<li class='list-group-item list-group-item-action'>".$row["username"]."</li>";
+                                    echo "<li class='list-group-item list-group-item'>".$row["username"]."</li>";
                                 }
                             }
                             ?>
@@ -165,10 +164,13 @@ else {
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 second-row-col-3">
+                <div class="col-md-3 second-row-col-3" id="map-column">
+
                     <div class="map">
-                        <div id="map" style="width:350px;height:350px;background:black"></div>
+                        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+                        <div class="map-space" id="map" style="width:300px;height:300px;background:black"></div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -183,18 +185,74 @@ else {
             </div>
         </div>
     </div>
-    <script>
-      function initMap() {
-        var knoxville = {lat: 35.965, lng: -83.927};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 8,
-          center: knoxville
-        });
-        var marker = new google.maps.Marker({
-          position: knoxville,
-          map: map
-        });
-      }
+
+    <script>//placeholder//
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -33.8688, lng: 151.2195},
+                zoom: 13,
+                mapTypeId: 'roadmap'
+            });
+            var input = document.getElementById('pac-input');
+            var searchBox = new google.maps.places.SearchBox(input);
+            map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+            map.addListener('bounds_changed', function() {
+                searchBox.setBounds(map.getBounds());
+            });
+
+            var markers = [];
+
+            searchBox.addListener('places_changed', function() {
+                var places = searchBox.getPlaces();
+
+                if (places.length == 0) {
+                    return;
+                }
+
+                // Clear out the old markers.
+                markers.forEach(function(marker) {
+                    marker.setMap(null);
+                });
+                markers = [];
+
+                // For each place, get the icon, name and location.
+                var bounds = new google.maps.LatLngBounds();
+                places.forEach(function(place) {
+                    if (!place.geometry) {
+                        console.log("Returned place contains no geometry");
+                        return;
+                    }
+                    var icon = {
+                        url: place.icon,
+                        size: new google.maps.Size(71, 71),
+                        origin: new google.maps.Point(0, 0),
+                        anchor: new google.maps.Point(17, 34),
+                        scaledSize: new google.maps.Size(25, 25)
+                    };
+
+                    // Create a marker for each place.
+                    markers.push(new google.maps.Marker({
+                        map: map,
+                        icon: icon,
+                        title: place.name,
+                        position: place.geometry.location
+                    }));
+
+                    if (place.geometry.viewport) {
+                        // Only geocodes have viewport.
+                        bounds.union(place.geometry.viewport);
+                    } else {
+                        bounds.extend(place.geometry.location);
+                    }
+                });
+                map.fitBounds(bounds);
+            });
+        }
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOMcE-hq4YPziF6CDJ3VLjXBCqeUy1daA&callback=initMap"></script>
-    <?php require 'footer.php' ?>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOMcE-hq4YPziF6CDJ3VLjXBCqeUy1daA&libraries=places&callback=initMap"></script>
+
+
+
+<?php require 'footer.php' ?>

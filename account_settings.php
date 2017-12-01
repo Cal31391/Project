@@ -66,7 +66,7 @@ else {
                     <!--USER STUFF-->
                     <div class="col-sm-offset-5 col-sm-3 user-info">
                         <div class="user">
-                            <img src="./images/Profile-Placeholder.png" alt="placeholder" class="img-thumbnail" width="200px" height="200px">
+                            <img id="profile-pic" src="" alt="No Image" class="img-thumbnail" width="200px" height="200px">
                         </div>
                         <div class="link" style="cursor: pointer">
                             <div class="change-pic">
@@ -105,16 +105,13 @@ else {
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <form action="/action_page.php">
                             <div class="form-group">
                                 <label class="control-label">Select File</label>
-                                <input id="input-b5" name="input-b5[]" type="file" multiple>
-                                <input type="pic" class="form-control" id="pic">
+                                <input type="file" id="prof-pic">
                                 <button type="button" class="btn btn-default account_modify-btn" data-dismiss="modal">Submit</button>
                                 <!--http://plugins.krajee.com/file-basic-usage-demo-->
                                 <!--Add dialog after submit-->
                             </div>
-                        </form>
                     </div>
                 </div>
             </div>
