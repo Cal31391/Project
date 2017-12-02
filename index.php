@@ -40,7 +40,7 @@
                                             <a data-toggle="modal" class="clickable" data-target="#password-modal">Forgot Password?</a>
                                         </div>
                                         <div class="login-submit-btn">
-                                            <button type="submit" class="btn btn-default" value="Submit" data-dismiss="modal">Submit</button>
+                                            <button type="submit" class="btn btn-primary" value="Submit" data-dismiss="modal">Submit</button>
                                         </div>
                                     </div>
                                 </form>
@@ -95,7 +95,7 @@
                                 <span class="warningtext" id="regEmailWarn">Enter an email</span>
                             </div>
                             <div class="submit">
-                                <button type="submit" class="btn btn-default">Submit</button>
+                                <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
                         </form>
                     </div>

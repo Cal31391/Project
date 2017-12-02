@@ -17,6 +17,6 @@ $count = $stmt->rowCount();
 if ($count > 0) {
     for($i=0; $i<$count; $i++) {
         $row = $rows[$i];
-        echo "<li class='list-group-item list-group-item-action' onselect='selectMembers()'>".$row["username"]."</li>";
+        echo "<li class='list-group-item list-group-item' onselect='selectMembers()'>".$row["username"]."</li>";
     }
 }

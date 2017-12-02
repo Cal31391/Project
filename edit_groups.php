@@ -77,9 +77,10 @@ else {
             </select>
         </div>
         <div id="reload-btn">
-            <button type="button " class="btn reload-btn" onclick="reload()">Reload</button>
-            <button type="button " class="btn new-group-btn" data-toggle="modal" data-target="#create-group-name-modal"">New Group</button>
+            <button type="button " class="btn btn-primary reload-btn" onclick="reload()">Reload</button>
+            <button type="button " class="btn btn-primary new-group-btn" data-toggle="modal" data-target="#create-group-name-modal"">New Group</button>
         </div>
+
 
 
 
@@ -123,7 +124,7 @@ else {
                     </div>
                 </div>
                 <div class="col-md-offset-10 col-md-2 save-group-btn">
-                    <button type="button " class="btn save-btn" data-toggle="modal" data-target="#edit-group-name-modal">Change Group Name</button>
+                    <button type="button " class="btn btn-primary save-btn" data-toggle="modal" data-target="#edit-group-name-modal">Change Group Name</button>
                     <span class="popuptext" id="confirmSaved">Saved!</span>
                 </div>
             </div>

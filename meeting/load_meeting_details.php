@@ -14,6 +14,7 @@ $count = $stmt->rowCount();
 
     $_SESSION['meeting_name'] = $rows['name'];
     $_SESSION['location'] = $rows['location'];
+    $_SESSION['location_name'] = $rows['location_name'];
     $_SESSION['notes'] = $rows['notes'];
     $_SESSION['group_name'] = $rows['group_name'];
     $_SESSION['sTime'] = $rows['start_time'];

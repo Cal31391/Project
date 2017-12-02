@@ -339,26 +339,6 @@ var autoRespond = function() {
     });
 };*/
 
-var unselectAll = function() {
-    var list_group_item = $(".list-group-item-action");
-
-    if ($(list_group_item).hasClass('active')) {
-        $(list_group_item).removeClass('active');
-    }
-};
-
-var selectAll = function() {
-    var list_group_item = $(".list-group-item-action");
-
-    if (!$(list_group_item).hasClass('active')) {
-        $(list_group_item).addClass('active');
-    }
-};
-
-var clearAll = function() {
-    unselectAll();
-};
-
 var reload = function() {
     location.reload();
 }

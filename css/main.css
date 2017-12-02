@@ -315,6 +315,10 @@ footer {
     float: right;
 }
 
+.group-selector {
+    margin-top: 4%;
+}
+
 #group-members {
     overflow-y: scroll;
     height: 250px;

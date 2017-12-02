@@ -153,8 +153,7 @@ else {
     <div class="container-fluid">
         <div class="row third-row">
             <div class="col-md-offset-4 col-md-4 third-row-col-1">
-                <button type="button" class="btn" onclick="clearAll()">Clear</button>
-                <button type="button" class="btn" onclick="saveMeeting()">Save</button>
+                <button type="button" class="btn btn-primary" onclick="saveMeeting()">Save</button>
                 <span class="popuptext" id="confirmSaved">Saved!</span>
             </div>
         </div>

@@ -25,6 +25,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['password'] = $password;
         $_SESSION['email'] = $email;
 
+        $stmt = $conn->prepare("SELECT id FROM users WHERE username=:username");
+        $stmt->bindParam(':username', $_POST['username'], PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetch(PDO::FETCH_ASSOC);
+        $count = $stmt->rowCount(); 
+
+        $id = $rows['id'];
+
+        $_SESSION['id'] = $id;
+
         header("location: dashboard.php");
     } else {
         header("location: failure.html");

@@ -16,6 +16,7 @@ else {
 
 
     $meeting_name = $_SESSION['meeting_name'];
+    $location_name = $_SESSION['location_name'];
     $location = $_SESSION['location'];
     $notes = $_SESSION['notes'];
     $group_name = $_SESSION['group_name'];

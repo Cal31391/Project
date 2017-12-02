@@ -66,7 +66,7 @@ else {
                     <!--USER STUFF-->
                     <div class="col-sm-offset-5 col-sm-3 user-info">
                         <div class="user">
-                            <img id="profile-pic" src="" alt="No Image" class="img-thumbnail" width="200px" height="200px">
+                            <img id="profile-pic" src="./images/Profile-Placeholder.png" alt="No Image" class="img-thumbnail" width="200px" height="200px">
                         </div>
                         <div class="link" style="cursor: pointer">
                             <div class="change-pic">
