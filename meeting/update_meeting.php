@@ -28,8 +28,15 @@ $stmt->bindParam(':notes', $_POST['notes'], PDO::PARAM_STR);
 $stmt->bindParam(':gName', $_POST['g_n'], PDO::PARAM_STR);
 $stmt->execute();
 
+$stmt = $conn->prepare("SELECT location_name FROM meetings WHERE name=:name");
+$stmt->bindParam(':name', $_POST['n'], PDO::PARAM_STR);
+$stmt->execute();
+$rows = $stmt->fetch(PDO::FETCH_ASSOC);
+$count = $stmt->rowCount();
+
+
 $_SESSION['meeting_name'] = $name;
-//$_SESSION['location'] = $rows['location'];
+$_SESSION['location_name'] = $rows['location_name'];
 $_SESSION['notes'] = $notes;
 $_SESSION['group_name'] = $group_name;
 $_SESSION['sTime'] = $startTime;

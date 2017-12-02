@@ -13,7 +13,8 @@ else {
     include("config/db_connect.php");
 
     $meeting_name = $_SESSION['meeting_name'];
-    //$location = $_SESSION['location'];
+    $location_name = $_SESSION['location_name'];
+    $location = $_SESSION['location'];
     $notes = $_SESSION['notes'];
     $group_name = $_SESSION['group_name'];
     $sTime = $_SESSION['sTime'];
@@ -186,14 +187,39 @@ else {
         </div>
     </div>
 
-    <script>//placeholder//
+    <script>//https://developers.google.com/maps/documentation/javascript/examples/places-searchbox//
         function initMap() {
             var map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: -33.8688, lng: 151.2195},
+                center: {lat: 35.96, lng: 83.92},
                 zoom: 13,
                 mapTypeId: 'roadmap'
             });
+            var loc = "<?php echo $location; ?>";
+
+            var geocoder = new google.maps.Geocoder();
+
+            geocoder.geocode({'placeId': loc}, function(results, status) {
+                if (status === 'OK') {
+                    if (results[0]) {
+                        map.setCenter(results[0].geometry.location);
+                        var marker = new google.maps.Marker({
+                            map: map,
+                            position: results[0].geometry.location
+                        });
+                    } else {
+                        window.alert('No results found');
+                    }
+                } else {
+                    window.alert('Geocoder failed due to: ' + status);
+                }
+            });
+
+
+            var savedLocation = "<?php echo $location_name; ?>";
+
+
             var input = document.getElementById('pac-input');
+            input.value = savedLocation;
             var searchBox = new google.maps.places.SearchBox(input);
             map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
@@ -223,6 +249,7 @@ else {
                         console.log("Returned place contains no geometry");
                         return;
                     }
+
                     var icon = {
                         url: place.icon,
                         size: new google.maps.Size(71, 71),
@@ -239,6 +266,8 @@ else {
                         position: place.geometry.location
                     }));
 
+                    storeLocation(place.place_id, place.formatted_address,'<?php echo $meeting_name; ?>' );
+
                     if (place.geometry.viewport) {
                         // Only geocodes have viewport.
                         bounds.union(place.geometry.viewport);
@@ -246,9 +275,24 @@ else {
                         bounds.extend(place.geometry.location);
                     }
                 });
+
                 map.fitBounds(bounds);
             });
         }
+
+        var storeLocation = function(loc, address, meeting) {
+
+            if(loc != "") {
+                $.ajax({
+                    url:"./store_location.php",
+                    data:{loc:loc, meeting: meeting, address: address},
+                    type:'POST',
+                    success:function(response) {
+                        var resp = $.trim(response);
+                    }
+                });
+            }
+        };
     </script>
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOMcE-hq4YPziF6CDJ3VLjXBCqeUy1daA&libraries=places&callback=initMap"></script>
