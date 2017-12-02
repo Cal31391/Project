@@ -226,10 +226,23 @@ var saveMeeting = function() {
             data:{n:name, d:date, sT:startTime, eT:endTime, notes:notes, g_n:group_name, u:user},
             type:'POST',
             success:function(response) {
-                alert(response);
+
                 var resp = $.trim(response);
             }
         });
+
+
+            console.log(name);
+            $.ajax({
+                url:"./meeting/store_new_location.php",
+                data:{loc:place_id, meeting: name, address: address},
+                type:'POST',
+                success:function(response) {
+                    var resp = $.trim(response);
+                }
+            });
+
+
 
         $(popup).css({ display: "block" });
         $(popup).delay(2000).fadeOut(450);

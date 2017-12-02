@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9e2e26d-4a85-4de4-ae75-583f65a1836d" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/store_location.php" afterPath="$PROJECT_DIR$/meeting/store_location.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/edit_meeting.php" afterPath="$PROJECT_DIR$/edit_meeting.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meeting/load_meeting_details.php" afterPath="$PROJECT_DIR$/meeting/load_meeting_details.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meeting/update_meeting.php" afterPath="$PROJECT_DIR$/meeting/update_meeting.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meeting_info.php" afterPath="$PROJECT_DIR$/meeting_info.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meeting/create_meeting.php" afterPath="$PROJECT_DIR$/meeting/create_meeting.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_meeting.php" afterPath="$PROJECT_DIR$/new_meeting.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,69 +18,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="edit_meeting.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="edit_meeting.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/edit_meeting.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="192" column="47" lean-forward="false" selection-start-line="192" selection-start-column="47" selection-end-line="192" selection-end-column="47" />
+            <state relative-caret-position="175">
+              <caret line="192" column="35" lean-forward="false" selection-start-line="192" selection-start-column="35" selection-end-line="192" selection-end-column="35" />
               <folding>
-                <marker date="1512182482645" expanded="true" signature="4647:4667" ph="SELECT * FRO... groups" />
-                <marker date="1512182482645" expanded="true" signature="5823:5909" ph="SELECT u.use... user_group" />
-                <marker date="1512182482645" expanded="true" signature="5823:6226" ph="SELECT u.use... user_group" />
+                <marker date="1512245357503" expanded="true" signature="4647:4667" ph="SELECT * FRO... groups" />
+                <marker date="1512245357503" expanded="true" signature="5823:5909" ph="SELECT u.use... user_group" />
+                <marker date="1512245357503" expanded="true" signature="5823:6226" ph="SELECT u.use... user_group" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="update_meeting.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/meeting/update_meeting.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="43" column="24" lean-forward="true" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
-              <folding>
-                <marker date="1512180433367" expanded="true" signature="256:291" ph="SELECT id FR... meetings" />
-                <marker date="1512180433367" expanded="true" signature="256:300" ph="SELECT id FR... meetings" />
-                <marker date="1512180433367" expanded="true" signature="517:636" ph="UPDATE meeti... " />
-                <marker date="1512180433367" expanded="true" signature="1041:1092" ph="SELECT locat... meetings" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="407" column="24" lean-forward="true" selection-start-line="407" selection-start-column="24" selection-end-line="407" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1649">
-              <caret line="275" column="30" lean-forward="false" selection-start-line="275" selection-start-column="30" selection-end-line="275" selection-end-column="30" />
+            <state relative-caret-position="413">
+              <caret line="239" column="44" lean-forward="false" selection-start-line="239" selection-start-column="44" selection-end-line="239" selection-end-column="44" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create_meeting.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/meeting/create_meeting.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-              <folding>
-                <marker date="1512016967229" expanded="true" signature="288:385" ph="INSERT INTO meetings... " />
-                <marker date="1512016967229" expanded="true" signature="517:552" ph="SELECT id FR... meetings" />
-                <marker date="1512016967229" expanded="true" signature="517:557" ph="SELECT id FR... meetings" />
-                <marker date="1512016967229" expanded="true" signature="756:792" ph="SELECT id FR... groups" />
-                <marker date="1512016967229" expanded="true" signature="756:801" ph="SELECT id FR... users" />
-                <marker date="1512016967229" expanded="true" signature="1001:1054" ph="INSERT INTO meetings... " />
-                <marker date="1512016967229" expanded="true" signature="1001:1059" ph="INSERT INTO group_meeting... " />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -100,12 +57,51 @@
         </entry>
       </file>
       <file leaf-file-name="store_location.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/store_location.php">
+        <entry file="file://$PROJECT_DIR$/meeting/store_location.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="34" lean-forward="false" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+            <state relative-caret-position="17">
+              <caret line="1" column="10" lean-forward="false" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
               <folding>
-                <marker date="1512181973758" expanded="true" signature="185:267" ph="UPDATE meeti... " />
+                <marker date="1512245084937" expanded="true" signature="186:268" ph="UPDATE meeti... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="store_new_location.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/meeting/store_new_location.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding>
+                <marker date="1512250918503" expanded="true" signature="186:255" ph="UPDATE meeti... " />
+                <marker date="1512250918503" expanded="true" signature="186:268" ph="UPDATE meeti... " />
+                <marker date="1512250918503" expanded="true" signature="192:255" ph="INSERT INTO meetings... " />
+                <marker date="1512250918503" expanded="true" signature="243:255" ph="UPDATE meeti... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create_meeting.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/meeting/create_meeting.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding>
+                <marker date="1512249912538" expanded="true" signature="288:385" ph="INSERT INTO meetings... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new_meeting.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/new_meeting.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="668">
+              <caret line="243" column="0" lean-forward="false" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
+              <folding>
+                <marker date="1512249812286" expanded="true" signature="3953:3973" ph="SELECT * FRO... groups" />
               </folding>
             </state>
           </provider>
@@ -114,10 +110,39 @@
       <file leaf-file-name="meeting_info.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/meeting_info.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="153" column="11" lean-forward="true" selection-start-line="138" selection-start-column="8" selection-end-line="153" selection-end-column="11" />
+            <state relative-caret-position="416">
+              <caret line="125" column="50" lean-forward="true" selection-start-line="125" selection-start-column="50" selection-end-line="125" selection-end-column="50" />
               <folding>
                 <marker date="1512180061449" expanded="true" signature="3093:3328" ph="SELECT u.use... user_group" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="save_group.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/group/save_group.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="61" />
+              <folding>
+                <marker date="1511972759461" expanded="true" signature="109:143" ph="SELECT id FR... groups" />
+                <marker date="1511972759461" expanded="true" signature="109:153" ph="SELECT id FR... groups" />
+                <marker date="1511972759461" expanded="true" signature="109:155" ph="SELECT id FR... groups" />
+                <marker date="1511972759461" expanded="true" signature="109:156" ph="SELECT id FR... groups" />
+                <marker date="1511972759461" expanded="true" signature="386:430" ph="UPDATE group... " />
+                <marker date="1511972759461" expanded="true" signature="386:431" ph="UPDATE group... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create_group.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/group/create_group.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="3" selection-end-column="16" />
+              <folding>
+                <marker date="1511979312995" expanded="true" signature="145:225" ph="INSERT INTO groups... " />
               </folding>
             </state>
           </provider>
@@ -163,7 +188,6 @@
         <option value="$PROJECT_DIR$/group/create_group.php" />
         <option value="$PROJECT_DIR$/group/load_edit_group_names.php" />
         <option value="$PROJECT_DIR$/login.php" />
-        <option value="$PROJECT_DIR$/new_meeting.php" />
         <option value="$PROJECT_DIR$/footer.php" />
         <option value="$PROJECT_DIR$/edit_groups.php" />
         <option value="$PROJECT_DIR$/meeting/load_edit_group_meetings.php" />
@@ -174,13 +198,17 @@
         <option value="$PROJECT_DIR$/meeting/meeting-edit-load-group-names.php" />
         <option value="$PROJECT_DIR$/css/main.css" />
         <option value="$PROJECT_DIR$/test.html" />
-        <option value="$PROJECT_DIR$/js/main.js" />
-        <option value="$PROJECT_DIR$/meeting/create_meeting.php" />
         <option value="$PROJECT_DIR$/meeting/load_meeting_details.php" />
         <option value="$PROJECT_DIR$/meeting_info.php" />
         <option value="$PROJECT_DIR$/meeting/update_meeting.php" />
         <option value="$PROJECT_DIR$/store_location.php" />
+        <option value="$PROJECT_DIR$/store_new_location.php" />
+        <option value="$PROJECT_DIR$/meeting/store_location.php" />
         <option value="$PROJECT_DIR$/edit_meeting.php" />
+        <option value="$PROJECT_DIR$/new_meeting.php" />
+        <option value="$PROJECT_DIR$/meeting/create_meeting.php" />
+        <option value="$PROJECT_DIR$/meeting/store_new_location.php" />
+        <option value="$PROJECT_DIR$/js/main.js" />
       </list>
     </option>
   </component>
@@ -191,9 +219,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="520" />
-    <option name="y" value="60" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="207" />
+    <option name="y" value="41" />
     <option name="width" value="763" />
     <option name="height" value="623" />
   </component>
@@ -253,9 +281,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Program Files (x86)\Ampps\www\Project\meeting" />
       <recent name="C:\Program Files (x86)\Ampps\www\Project\group" />
       <recent name="C:\Program Files (x86)\Ampps\www\Project\" />
-      <recent name="C:\Program Files (x86)\Ampps\www\Project\meeting" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Program Files (x86)\Ampps\www\Project" />
@@ -284,15 +312,15 @@
       <option name="presentableId" value="Default" />
       <updated>1510164818501</updated>
       <workItem from="1510164831778" duration="60270000" />
-      <workItem from="1511192065235" duration="121777000" />
+      <workItem from="1511192065235" duration="128600000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="182047000" />
+    <option name="totallyTimeSpent" value="188870000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10175695" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -503,31 +531,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/new_meeting.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="96" column="20" lean-forward="false" selection-start-line="96" selection-start-column="20" selection-end-line="96" selection-end-column="87" />
-          <folding>
-            <marker date="1512002908681" expanded="true" signature="3953:3973" ph="SELECT * FRO... groups" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/group/save_group.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="61" />
-          <folding>
-            <marker date="1511972759461" expanded="true" signature="109:143" ph="SELECT id FR... groups" />
-            <marker date="1511972759461" expanded="true" signature="109:153" ph="SELECT id FR... groups" />
-            <marker date="1511972759461" expanded="true" signature="109:155" ph="SELECT id FR... groups" />
-            <marker date="1511972759461" expanded="true" signature="109:156" ph="SELECT id FR... groups" />
-            <marker date="1511972759461" expanded="true" signature="386:430" ph="UPDATE group... " />
-            <marker date="1511972759461" expanded="true" signature="386:431" ph="UPDATE group... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -536,16 +539,6 @@
             <marker date="1511991526153" expanded="true" signature="372:425" ph="SELECT usern... users" />
             <marker date="1511991526153" expanded="true" signature="372:426" ph="SELECT usern... users" />
             <marker date="1511991526153" expanded="true" signature="372:441" ph="SELECT usern... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/group/create_group.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="3" selection-end-column="16" />
-          <folding>
-            <marker date="1511979312995" expanded="true" signature="145:225" ph="INSERT INTO groups... " />
           </folding>
         </state>
       </provider>
@@ -720,18 +713,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/meeting/load_meeting_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+          <folding>
+            <marker date="1512171549486" expanded="true" signature="117:124" ph="SELECT usern... users" />
+            <marker date="1512171549486" expanded="true" signature="117:153" ph="SELECT * FRO... meetings" />
+            <marker date="1512171549486" expanded="true" signature="117:166" ph="SELECT * FRO... meetings" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meeting/store_location.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="10" lean-forward="false" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+          <folding>
+            <marker date="1512245084937" expanded="true" signature="186:268" ph="UPDATE meeti... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meeting_info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="125" column="50" lean-forward="true" selection-start-line="125" selection-start-column="50" selection-end-line="125" selection-end-column="50" />
+          <folding>
+            <marker date="1512180061449" expanded="true" signature="3093:3328" ph="SELECT u.use... user_group" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_meeting.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="668">
+          <caret line="243" column="0" lean-forward="false" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
+          <folding>
+            <marker date="1512249812286" expanded="true" signature="3953:3973" ph="SELECT * FRO... groups" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/meeting/create_meeting.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+        <state relative-caret-position="340">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
-            <marker date="1512016967229" expanded="true" signature="288:385" ph="INSERT INTO meetings... " />
-            <marker date="1512016967229" expanded="true" signature="517:552" ph="SELECT id FR... meetings" />
-            <marker date="1512016967229" expanded="true" signature="517:557" ph="SELECT id FR... meetings" />
-            <marker date="1512016967229" expanded="true" signature="756:792" ph="SELECT id FR... groups" />
-            <marker date="1512016967229" expanded="true" signature="756:801" ph="SELECT id FR... users" />
-            <marker date="1512016967229" expanded="true" signature="1001:1054" ph="INSERT INTO meetings... " />
-            <marker date="1512016967229" expanded="true" signature="1001:1059" ph="INSERT INTO group_meeting... " />
+            <marker date="1512249912538" expanded="true" signature="288:385" ph="INSERT INTO meetings... " />
           </folding>
         </state>
       </provider>
@@ -749,55 +778,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1649">
-          <caret line="275" column="30" lean-forward="false" selection-start-line="275" selection-start-column="30" selection-end-line="275" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/meeting/load_meeting_details.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
-          <folding>
-            <marker date="1512171549486" expanded="true" signature="117:124" ph="SELECT usern... users" />
-            <marker date="1512171549486" expanded="true" signature="117:153" ph="SELECT * FRO... meetings" />
-            <marker date="1512171549486" expanded="true" signature="117:166" ph="SELECT * FRO... meetings" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store_location.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="34" lean-forward="false" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
-          <folding>
-            <marker date="1512181973758" expanded="true" signature="185:267" ph="UPDATE meeti... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/meeting_info.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="153" column="11" lean-forward="true" selection-start-line="138" selection-start-column="8" selection-end-line="153" selection-end-column="11" />
-          <folding>
-            <marker date="1512180061449" expanded="true" signature="3093:3328" ph="SELECT u.use... user_group" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/edit_meeting.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="192" column="47" lean-forward="false" selection-start-line="192" selection-start-column="47" selection-end-line="192" selection-end-column="47" />
+        <state relative-caret-position="175">
+          <caret line="192" column="35" lean-forward="false" selection-start-line="192" selection-start-column="35" selection-end-line="192" selection-end-column="35" />
           <folding>
-            <marker date="1512182482645" expanded="true" signature="4647:4667" ph="SELECT * FRO... groups" />
-            <marker date="1512182482645" expanded="true" signature="5823:5909" ph="SELECT u.use... user_group" />
-            <marker date="1512182482645" expanded="true" signature="5823:6226" ph="SELECT u.use... user_group" />
+            <marker date="1512245357503" expanded="true" signature="4647:4667" ph="SELECT * FRO... groups" />
+            <marker date="1512245357503" expanded="true" signature="5823:5909" ph="SELECT u.use... user_group" />
+            <marker date="1512245357503" expanded="true" signature="5823:6226" ph="SELECT u.use... user_group" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/group/save_group.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="61" />
+          <folding>
+            <marker date="1511972759461" expanded="true" signature="109:143" ph="SELECT id FR... groups" />
+            <marker date="1511972759461" expanded="true" signature="109:153" ph="SELECT id FR... groups" />
+            <marker date="1511972759461" expanded="true" signature="109:155" ph="SELECT id FR... groups" />
+            <marker date="1511972759461" expanded="true" signature="109:156" ph="SELECT id FR... groups" />
+            <marker date="1511972759461" expanded="true" signature="386:430" ph="UPDATE group... " />
+            <marker date="1511972759461" expanded="true" signature="386:431" ph="UPDATE group... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/group/create_group.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="3" selection-end-column="16" />
+          <folding>
+            <marker date="1511979312995" expanded="true" signature="145:225" ph="INSERT INTO groups... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meeting/store_new_location.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <marker date="1512250918503" expanded="true" signature="186:255" ph="UPDATE meeti... " />
+            <marker date="1512250918503" expanded="true" signature="186:268" ph="UPDATE meeti... " />
+            <marker date="1512250918503" expanded="true" signature="192:255" ph="INSERT INTO meetings... " />
+            <marker date="1512250918503" expanded="true" signature="243:255" ph="UPDATE meeti... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="239" column="44" lean-forward="false" selection-start-line="239" selection-start-column="44" selection-end-line="239" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>

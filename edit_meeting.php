@@ -284,7 +284,7 @@ else {
 
             if(loc != "") {
                 $.ajax({
-                    url:"./store_location.php",
+                    url:"./meeting/store_location.php",
                     data:{loc:loc, meeting: meeting, address: address},
                     type:'POST',
                     success:function(response) {
