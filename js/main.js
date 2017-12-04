@@ -4,19 +4,19 @@ $(document).ready(function() {
     var list_group_item = $(".list-group-item-action");
 
 
-    $(function () {
+    $(function() {
         $('[data-toggle="popover"]').popover()
     });
 
 
     $("#group-names").change(function() {
         var name_id = $(this).val();
-        if(name_id != "") {
+        if (name_id != "") {
             $.ajax({
-                url:"./group/load_group.php",
-                data:{n_id:name_id},
-                type:'POST',
-                success:function(response) {
+                url: "./group/load_group.php",
+                data: { n_id: name_id },
+                type: 'POST',
+                success: function(response) {
                     var resp = $.trim(response);
                     $("#group-members").html(resp);
                 }
@@ -26,12 +26,12 @@ $(document).ready(function() {
 
     $("#meeting-edit-group-names").change(function() {
         var name_id = $(this).val();
-        if(name_id != "") {
+        if (name_id != "") {
             $.ajax({
-                url:"./meeting/meeting-edit-load-group-names.php",
-                data:{n_id:name_id},
-                type:'POST',
-                success:function(response) {
+                url: "./meeting/meeting-edit-load-group-names.php",
+                data: { n_id: name_id },
+                type: 'POST',
+                success: function(response) {
                     var resp = $.trim(response);
                     $("#group-edit-members").html(resp);
                 }
@@ -42,22 +42,22 @@ $(document).ready(function() {
     $("#group-names-edit").change(function() {
         var name_id = $(this).val();
 
-        if(name_id != "" && name_id != 1) {
+        if (name_id != "" && name_id != 1) {
             $.ajax({
-                url:"./group/load_edit_group.php",
-                data:{n_id:name_id},
-                type:'POST',
-                success:function(response) {
+                url: "./group/load_edit_group.php",
+                data: { n_id: name_id },
+                type: 'POST',
+                success: function(response) {
                     var resp = $.trim(response);
                     $("#member-names").html(resp);
                 }
             });
 
             $.ajax({
-                url:"./meeting/load_edit_group_meetings.php",
-                data:{n_id:name_id},
-                type:'POST',
-                success:function(response) {
+                url: "./meeting/load_edit_group_meetings.php",
+                data: { n_id: name_id },
+                type: 'POST',
+                success: function(response) {
                     var resp = $.trim(response);
                     $("#meeting-links").html(resp);
                 }
@@ -81,17 +81,17 @@ $(document).ready(function() {
 
 var deleteName = function(e) {
     console.log("click");
-    var element = $("#"+e);
-    var bad_name = $("#"+e).text();
+    var element = $("#" + e);
+    var bad_name = $("#" + e).text();
     var name = bad_name.substr(6);
     var group = $("#group-names-edit").val();
     console.log(name);
-    if(name != "") {
+    if (name != "") {
         $.ajax({
-            url:"./group/delete_group_member.php",
-            data:{n:name, g:group},
-            type:'POST',
-            success:function(response) {
+            url: "./group/delete_group_member.php",
+            data: { n: name, g: group },
+            type: 'POST',
+            success: function(response) {
                 var resp = $.trim(response);
             }
         });
@@ -104,23 +104,23 @@ var addName = function() {
     var user = $("#mem-name-box").val();
     var group = $("#group-names-edit").val();
     console.log(user);
-    if(user != "") {
+    if (user != "") {
         $.ajax({
-            url:"./group/add_group_member.php",
-            data:{n:user, g:group},
-            type:'POST',
-            success:function(response) {
+            url: "./group/add_group_member.php",
+            data: { n: user, g: group },
+            type: 'POST',
+            success: function(response) {
                 var resp = $.trim(response);
             }
         });
     }
 
-    if(group != "") {
+    if (group != "") {
         $.ajax({
-            url:"./group/load_edit_group.php",
-            data:{n_id:group},
-            type:'POST',
-            success:function(response) {
+            url: "./group/load_edit_group.php",
+            data: { n_id: group },
+            type: 'POST',
+            success: function(response) {
                 var resp = $.trim(response);
                 $("#member-names").html(resp);
             }
@@ -131,12 +131,12 @@ var addName = function() {
 var loadEditMeeting = function() {
     var m = $("#meeting-name-header").text();
     console.log(m);
-    if(m != "") {
+    if (m != "") {
         $.ajax({
-            url:"./meeting/load_meeting_details.php",
-            data:{n:m},
-            type:'POST',
-            success:function(response) {
+            url: "./meeting/load_meeting_details.php",
+            data: { n: m },
+            type: 'POST',
+            success: function(response) {
                 window.location.assign('./edit_meeting.php');
                 //alert(response);
                 var resp = $.trim(response);
@@ -146,15 +146,15 @@ var loadEditMeeting = function() {
 };
 
 var getMeetingDetails = function(i) {
-    var bad_name = $("#meeting-name-link"+i).text();
+    var bad_name = $("#meeting-name-link" + i).text();
     var m = bad_name.split(',', 1)[0];
     console.log(m);
-    if(m != "") {
+    if (m != "") {
         $.ajax({
-            url:"./meeting/load_meeting_details.php",
-            data:{n:m},
-            type:'POST',
-            success:function(response) {
+            url: "./meeting/load_meeting_details.php",
+            data: { n: m },
+            type: 'POST',
+            success: function(response) {
                 window.location.assign('./meeting_info.php');
                 //alert(response);
                 var resp = $.trim(response);
@@ -164,15 +164,15 @@ var getMeetingDetails = function(i) {
 };
 
 var getMeetingDetailsForEditGroups = function(i) {
-    var bad_name = $("#name"+i).text();
+    var bad_name = $("#name" + i).text();
     var m = bad_name.split(',', 1)[0];
     console.log(m);
-    if(m != "") {
+    if (m != "") {
         $.ajax({
-            url:"./meeting/load_meeting_details.php",
-            data:{n:m},
-            type:'POST',
-            success:function(response) {
+            url: "./meeting/load_meeting_details.php",
+            data: { n: m },
+            type: 'POST',
+            success: function(response) {
                 window.location.assign('./meeting_info.php');
                 var resp = $.trim(response);
             }
@@ -189,16 +189,16 @@ var updateMeeting = function() {
     var startTime = $("#time1-edit").val();
     var endTime = $("#time2-edit").val();
     var notes = $("#notes-edit").val();
-    var group_name = $("#group-edit-names :selected").text();
+    var group_name = $("#meeting-edit-group-names :selected").text();
     var user = username;
 
-    console.log(name);
-    if(name != "") {
+    console.log(group_name);
+    if (name != "") {
         $.ajax({
-            url:"./meeting/update_meeting.php",
-            data:{n:name, d:date, sT:startTime, eT:endTime, notes:notes, g_n:group_name, u:user},
-            type:'POST',
-            success:function(response) {
+            url: "./meeting/update_meeting.php",
+            data: { n: name, d: date, sT: startTime, eT: endTime, notes: notes, g_n: group_name, u: user },
+            type: 'POST',
+            success: function(response) {
                 var resp = $.trim(response);
             }
         });
@@ -220,27 +220,27 @@ var saveMeeting = function() {
     var group_name = $("#group-names").val();
     var user = username;
 
-    if(name != "") {
+    if (name != "") {
         $.ajax({
-            url:"./meeting/create_meeting.php",
-            data:{n:name, d:date, sT:startTime, eT:endTime, notes:notes, g_n:group_name, u:user},
-            type:'POST',
-            success:function(response) {
+            url: "./meeting/create_meeting.php",
+            data: { n: name, d: date, sT: startTime, eT: endTime, notes: notes, g_n: group_name, u: user },
+            type: 'POST',
+            success: function(response) {
 
                 var resp = $.trim(response);
             }
         });
 
 
-            console.log(name);
-            $.ajax({
-                url:"./meeting/store_new_location.php",
-                data:{loc:place_id, meeting: name, address: address},
-                type:'POST',
-                success:function(response) {
-                    var resp = $.trim(response);
-                }
-            });
+        console.log(name);
+        $.ajax({
+            url: "./meeting/store_new_location.php",
+            data: { loc: place_id, meeting: name, address: address },
+            type: 'POST',
+            success: function(response) {
+                var resp = $.trim(response);
+            }
+        });
 
 
 
@@ -249,19 +249,19 @@ var saveMeeting = function() {
     }
 };
 
-var saveGroup = function(n,o) {
+var saveGroup = function(n, o) {
     var popup = $("#confirmSaved");
 
     var name = n;
     var old_name = o;
     console.log(old_name);
     console.log(name);
-    if(name != "") {
+    if (name != "") {
         $.ajax({
-            url:"./group/save_group.php",
-            data:{n:name, old:old_name},
-            type:'POST',
-            success:function(response) {
+            url: "./group/save_group.php",
+            data: { n: name, old: old_name },
+            type: 'POST',
+            success: function(response) {
                 var resp = $.trim(response);
             }
         });
@@ -276,10 +276,10 @@ var saveGroup = function(n,o) {
 
 var reloadGroups = function() {
     $.ajax({
-        url:"./group/load_edit_group_names.php",
-        data:{},
-        type:'POST',
-        success:function(response) {
+        url: "./group/load_edit_group_names.php",
+        data: {},
+        type: 'POST',
+        success: function(response) {
             var resp = $.trim(response);
             $("#group-names-edit").html(resp);
         }
@@ -290,12 +290,12 @@ var createGroup = function() {
     var group_name = $("#new-create-group-name").val();
     console.log(group_name);
 
-    if(group_name != "") {
+    if (group_name != "") {
         $.ajax({
-            url:"./group/create_group.php",
-            data:{n:group_name},
-            type:'POST',
-            success:function(response) {
+            url: "./group/create_group.php",
+            data: { n: group_name },
+            type: 'POST',
+            success: function(response) {
                 var resp = $.trim(response);
             }
         });
@@ -372,14 +372,13 @@ var validateFields = function() {
 
     if ($(username).val() == "" || $(password).val() == "") {
         if ($(username).val() == "") {
-            $(username_err).css({display: "block"});
+            $(username_err).css({ display: "block" });
         }
         if ($(password).val() == "") {
             $(password_err).css({ display: "block" });
         }
         return false;
-    }
-    else {
+    } else {
         return true;
     }
 };
@@ -398,7 +397,7 @@ var validateRegFields = function() {
     if ($(username).val() == "" || $(password).val() == "" || $(repwd).val() == "" ||
         $(email).val() == "") {
         if ($(username).val() == "") {
-            $(username_err).css({display: "block"});
+            $(username_err).css({ display: "block" });
         }
         if ($(password).val() == "") {
             $(password_err).css({ display: "block" });
@@ -410,14 +409,10 @@ var validateRegFields = function() {
             $(email_err).css({ display: "block" });
         }
         if ($(password).val() != $(repwd).val()) {
-            $(match_err).css({display: "block"});
+            $(match_err).css({ display: "block" });
         }
         return false;
-    }
-    else {
+    } else {
         return true;
     }
 };
-
-
-
